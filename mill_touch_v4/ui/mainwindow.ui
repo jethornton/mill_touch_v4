@@ -182,28 +182,28 @@
                   <number>5</number>
                  </property>
                  <item row="1" column="2">
-                  <widget class="QPushButton" name="pushButton_25">
+                  <widget class="QPushButton" name="navDown">
                    <property name="text">
                     <string>Down</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QPushButton" name="pushButton_27">
+                  <widget class="QPushButton" name="navUp">
                    <property name="text">
                     <string>Up</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="0">
-                  <widget class="QPushButton" name="pushButton_26">
+                  <widget class="QPushButton" name="navParent">
                    <property name="text">
                     <string>Parent Directory</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="3">
-                  <widget class="QPushButton" name="pushButton_28">
+                  <widget class="QPushButton" name="navLoad">
                    <property name="text">
                     <string>Load</string>
                    </property>
@@ -234,7 +234,717 @@
              </layout>
             </widget>
             <widget class="QWidget" name="mainPage_3">
-             <layout class="QVBoxLayout" name="verticalLayout_8"/>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QStackedWidget" name="smartStack">
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
+                <widget class="QWidget" name="page">
+                 <layout class="QGridLayout" name="gridLayout_24">
+                  <item row="1" column="2" rowspan="2">
+                   <widget class="QWidget" name="gridWidget" native="true">
+                    <layout class="QGridLayout" name="gridLayout_26">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="spacing">
+                      <number>5</number>
+                     </property>
+                     <item row="1" column="0">
+                      <widget class="QPushButton" name="pushButton_72">
+                       <property name="text">
+                        <string>4</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QPushButton" name="pushButton_65">
+                       <property name="text">
+                        <string>8</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QPushButton" name="pushButton_69">
+                       <property name="text">
+                        <string>0</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="0" column="2">
+                      <widget class="QPushButton" name="pushButton_63">
+                       <property name="text">
+                        <string>9</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="2" column="2">
+                      <widget class="QPushButton" name="pushButton_64">
+                       <property name="text">
+                        <string>3</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QPushButton" name="pushButton_66">
+                       <property name="text">
+                        <string>7</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QPushButton" name="pushButton_67">
+                       <property name="text">
+                        <string>1</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="3" column="2">
+                      <widget class="QPushButton" name="pushButton_71">
+                       <property name="text">
+                        <string>-</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QPushButton" name="pushButton_68">
+                       <property name="text">
+                        <string>2</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QPushButton" name="pushButton_70">
+                       <property name="text">
+                        <string>.</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QPushButton" name="pushButton_73">
+                       <property name="text">
+                        <string>5</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="1" column="2">
+                      <widget class="QPushButton" name="pushButton_74">
+                       <property name="text">
+                        <string>6</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillKeyPad</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="4" column="2">
+                      <widget class="QPushButton" name="drillBackspace">
+                       <property name="text">
+                        <string>&lt;=</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QGroupBox" name="gridGroupBox">
+                    <property name="title">
+                     <string>Spot Drill</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_21"/>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QGroupBox" name="gridGroupBox_3">
+                    <property name="title">
+                     <string>Ream</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_23"/>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QGroupBox" name="drillEnable">
+                    <property name="title">
+                     <string>Drill</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_22">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>15</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="spacing">
+                      <number>5</number>
+                     </property>
+                     <item row="1" column="6">
+                      <spacer name="horizontalSpacer">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="2" column="4">
+                      <widget class="QLineEdit" name="drillTipAngle">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>100</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="2">
+                      <widget class="QLineEdit" name="drillRPM">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>100</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="2">
+                      <widget class="QLineEdit" name="drillDepth">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>100</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="2">
+                      <widget class="QLineEdit" name="drillHoleDiameter">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>100</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="4">
+                      <widget class="QLineEdit" name="drillRetract">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>100</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="2">
+                      <widget class="QLineEdit" name="drillFeed">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>100</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="4">
+                      <widget class="QLineEdit" name="lineEdit_6">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>100</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QCheckBox" name="checkBox">
+                       <property name="text">
+                        <string>Enable</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QCheckBox" name="checkBox_2">
+                       <property name="text">
+                        <string>Coolant</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QCheckBox" name="checkBox_3">
+                       <property name="text">
+                        <string>Add Tip to Depth</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="0">
+                      <widget class="QCheckBox" name="checkBox_4">
+                       <property name="text">
+                        <string>Peck Drill</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QPushButton" name="pushButton_57">
+                       <property name="text">
+                        <string>RPM</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="labelName" stdset="0">
+                        <string>drillRPM</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillOpBtnGrp</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QPushButton" name="pushButton_56">
+                       <property name="text">
+                        <string>Hole
+Diameter</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="labelName" stdset="0">
+                        <string>drillHoleDiameter</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillOpBtnGrp</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QPushButton" name="pushButton_58">
+                       <property name="text">
+                        <string>Feed</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="labelName" stdset="0">
+                        <string>drillFeed</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillOpBtnGrp</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="2" column="3">
+                      <widget class="QPushButton" name="pushButton_60">
+                       <property name="text">
+                        <string>Tip
+Angle</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="labelName" stdset="0">
+                        <string>drillTipAngle</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillOpBtnGrp</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="4" column="1">
+                      <widget class="QPushButton" name="pushButton_59">
+                       <property name="text">
+                        <string>Depth</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="labelName" stdset="0">
+                        <string>drillDepth</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillOpBtnGrp</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="3" column="3">
+                      <widget class="QPushButton" name="drillDelta">
+                       <property name="text">
+                        <string>Delta</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="labelName" stdset="0">
+                        <string>drillDelta</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillOpBtnGrp</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="4" column="3">
+                      <widget class="QPushButton" name="pushButton_62">
+                       <property name="text">
+                        <string>Retract</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="labelName" stdset="0">
+                        <string>drillRetract</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">drillOpBtnGrp</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="page_2">
+                 <layout class="QVBoxLayout" name="verticalLayout_22">
+                  <item>
+                   <widget class="QWidget" name="gridWidget" native="true">
+                    <layout class="QGridLayout" name="gridLayout_25">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="spacing">
+                      <number>5</number>
+                     </property>
+                     <item row="0" column="4">
+                      <spacer name="verticalSpacer_3">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="5" column="5">
+                      <widget class="QPushButton" name="coordListAdd">
+                       <property name="text">
+                        <string>Send</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="5">
+                      <widget class="QPushButton" name="pushButton_35">
+                       <property name="text">
+                        <string>6</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="0">
+                      <widget class="QLabel" name="label_33">
+                       <property name="text">
+                        <string>X Center</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0" rowspan="4" colspan="3">
+                      <widget class="QListView" name="coordListView"/>
+                     </item>
+                     <item row="3" column="5">
+                      <widget class="QPushButton" name="pushButton_54">
+                       <property name="text">
+                        <string>3</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="4">
+                      <widget class="QPushButton" name="pushButton_31">
+                       <property name="text">
+                        <string>.</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="4">
+                      <widget class="QPushButton" name="pushButton_50">
+                       <property name="text">
+                        <string>2</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="3">
+                      <widget class="QPushButton" name="pushButton_30">
+                       <property name="text">
+                        <string>0</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="4">
+                      <widget class="QPushButton" name="pushButton_46">
+                       <property name="text">
+                        <string>5</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="3">
+                      <widget class="QPushButton" name="pushButton_47">
+                       <property name="text">
+                        <string>7</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="2">
+                      <widget class="QLineEdit" name="lineEdit_9"/>
+                     </item>
+                     <item row="2" column="3">
+                      <widget class="QPushButton" name="pushButton_45">
+                       <property name="text">
+                        <string>4</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="4">
+                      <widget class="QPushButton" name="pushButton_48">
+                       <property name="text">
+                        <string>8</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="5">
+                      <widget class="QPushButton" name="pushButton_28">
+                       <property name="text">
+                        <string>9</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="2">
+                      <widget class="QLineEdit" name="lineEdit_8"/>
+                     </item>
+                     <item row="5" column="0">
+                      <widget class="QLabel" name="label_34">
+                       <property name="text">
+                        <string>Y Center</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="3">
+                      <widget class="QPushButton" name="pushButton_49">
+                       <property name="text">
+                        <string>1</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="5">
+                      <widget class="QPushButton" name="pushButton_29">
+                       <property name="text">
+                        <string>-</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1">
+                      <widget class="QCheckBox" name="xCoordChkBox">
+                       <property name="text">
+                        <string>X Center</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1">
+                      <widget class="QCheckBox" name="yCoordChkBox">
+                       <property name="text">
+                        <string>Y Center</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="page_3"/>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="gridWidget" native="true">
+                <layout class="QGridLayout" name="gridLayout_9">
+                 <property name="leftMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="spacing">
+                  <number>5</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QPushButton" name="pushButton_25">
+                   <property name="text">
+                    <string>Drill Ops</string>
+                   </property>
+                   <property name="page" stdset="0">
+                    <number>0</number>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">smartGcodeBtnGrp</string>
+                   </attribute>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QPushButton" name="loadGcode">
+                   <property name="text">
+                    <string>Load</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QPushButton" name="pushButton_26">
+                   <property name="text">
+                    <string>Coordinates</string>
+                   </property>
+                   <property name="page" stdset="0">
+                    <number>1</number>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">smartGcodeBtnGrp</string>
+                   </attribute>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QPushButton" name="pushButton_27">
+                   <property name="text">
+                    <string>G code</string>
+                   </property>
+                   <property name="page" stdset="0">
+                    <number>2</number>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">smartGcodeBtnGrp</string>
+                   </attribute>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
             </widget>
             <widget class="QWidget" name="mainPage_4">
              <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -693,7 +1403,7 @@ All</string>
           <item>
            <widget class="QStackedWidget" name="droStack">
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="dro_page_1">
              <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -942,6 +1652,9 @@ All</string>
                   <widget class="StatusLabel" name="statuslabel_17">
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0][0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                    </property>
                   </widget>
                  </item>
@@ -2174,11 +2887,78 @@ Ops</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>navParent</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>viewParentDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>553</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>navUp</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>selectPrevious()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>553</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>navDown</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>selectNext()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>536</x>
+     <y>553</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>navLoad</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>loadSelectedFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>737</x>
+     <y>553</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="mdiBtnGrp"/>
+  <buttongroup name="controlBtnGrp"/>
+  <buttongroup name="smartGcodeBtnGrp"/>
   <buttongroup name="droBtnGrp"/>
   <buttongroup name="mainBtnGrp"/>
-  <buttongroup name="controlBtnGrp"/>
+  <buttongroup name="mdiBtnGrp"/>
+  <buttongroup name="drillOpBtnGrp"/>
+  <buttongroup name="drillKeyPad"/>
  </buttongroups>
 </ui>

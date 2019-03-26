@@ -10,18 +10,26 @@ from PyQt5 import QtCore
 # Setup Help Text
 import mill_touch_v4.helptext as helptext
 
+# Setup Button Handler
+import mill_touch_v4.button_handler as btnHandler
+
+# Smart G code thingy
+import linuxcnc
+
 
 class MyMainWindow(VCPMainWindow):
     """Main window class for the VCP."""
     def __init__(self, *args, **kwargs):
         super(MyMainWindow, self).__init__(*args, **kwargs)
+        self.emcCommand = linuxcnc.command()
 
         # Hide Window Title Bar
         self.setWindowFlags(
             QtCore.Qt.Window |
-            QtCore.Qt.CustomizeWindowHint |
-            QtCore.Qt.WindowStaysOnTopHint)
+            QtCore.Qt.CustomizeWindowHint)
+            # | QtCore.Qt.WindowStaysOnTopHint
 
+        self.drillKeyPad.buttonClicked.connect(self.drillOpHandleKeys)
         self.controlBtnGrp.buttonClicked.connect(self.controlChangePage)
         self.droBtnGrp.buttonClicked.connect(self.droChangePage)
         self.mainBtnGrp.buttonClicked.connect(self.mainChangePage)
@@ -30,7 +38,12 @@ class MyMainWindow(VCPMainWindow):
         self.mdiHelpBtn.clicked.connect(self.mdiHelpPage)
         self.mdiEntryBtn.clicked.connect(self.mdiEntryPage)
         self.mdiLoad.clicked.connect(self.mdiSetLabels)
+        self.smartGcodeBtnGrp.buttonClicked.connect(self.smartChangePage)
+        self.loadGcode.clicked.connect(self.loadSmartGcode)
 
+
+    def drillOpHandleKeys(self, button):
+        btnHandler.drillOpHandleKeys(self, button)
 
     def mainChangePage(self, button):
         self.mainStack.setCurrentIndex(button.property('page'))
@@ -40,6 +53,9 @@ class MyMainWindow(VCPMainWindow):
 
     def droChangePage(self, button):
         self.droStack.setCurrentIndex(button.property('page'))
+
+    def smartChangePage(self, button):
+        self.smartStack.setCurrentIndex(button.property('page'))
 
     def mdiHelpPage(self, button):
         self.mdiStack.setCurrentIndex(1)
@@ -87,6 +103,11 @@ class MyMainWindow(VCPMainWindow):
         if len(self.mdiEntry.text()) > 0:
             text = self.mdiEntry.text()[:-1]
             self.mdiEntry.setText(text)
+
+
+
+    def loadSmartGcode(self):
+        self.emcCommand.program_open('/tmp/qtpyvcp.ngc')
 
     def on_exitBtn_clicked(self):
         self.app.quit()

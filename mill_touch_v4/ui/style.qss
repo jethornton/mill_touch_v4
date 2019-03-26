@@ -12,6 +12,11 @@ QPushButton {
     min-height: 45px;
 }
 
+QCheckBox {
+    min-width: 45px;
+    min-height: 45px;
+}
+
 QPushButton:disabled {
     border-color: #404040;
 }
