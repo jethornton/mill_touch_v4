@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: mill-touch-v4
+Version: 0.0.1
+Summary: mill_touch_v4 - A QtPyVCP based Virtual Control Panel for LinuxCNC
+Home-page: https://github.com/USERNAME/REPO
+Author: John Doe
+Author-email: <doe.john@example.com>
+License: UNKNOWN
+Download-URL: https://github.com/USERNAME/REPO/tarball/master
+Description: # mill_touch_v4
+        QtPyVCP Mill Touch Screen GUI for 1280 x 768 resolution
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown

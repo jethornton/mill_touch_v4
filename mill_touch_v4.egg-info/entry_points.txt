@@ -1,0 +1,6 @@
+[gui_scripts]
+mill_touch_v4 = mill_touch_v4:main
+
+[qtpyvcp.vcp]
+mill_touch_v4 = mill_touch_v4
+
