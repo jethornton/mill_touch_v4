@@ -6,11 +6,23 @@ def preambleAdd(parent):
     parent.gcodeListWidget.addItem(parent.gcodePreambleLine.text())
 
 def gcodeAppend(parent):
-
     if parent.drillOpChkBox.isChecked():
         parent.gcodeListWidget.addItem('; Drill Op')
         if parent.drillRPM.text():
             parent.gcodeListWidget.addItem('M3 S{}'.format(parent.drillRPM.text()))
+        if parent.drillFeed.text():
+            parent.gcodeListWidget.addItem('F{}'.format(parent.drillFeed.text()))
+        if parent.coordListWidget.count() > 0: # toss out an error if not
+            for i in range(parent.coordListWidget.count()):
+                coordinates = parent.coordListWidget.item(i).text()
+                zDepth = parent.drillDepth.text()
+                zClear = parent.drillRetract.text()
+                if i == 0:
+                    parent.gcodeListWidget.addItem('G81 {} Z{} R{}'.format(coordinates, zDepth, zClear))
+                else:
+                    parent.gcodeListWidget.addItem('{}'.format(coordinates))
+
+
 
 def postambleAppend(parent):
     parent.gcodeListWidget.addItem('M2')
