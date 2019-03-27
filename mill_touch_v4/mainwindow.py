@@ -29,7 +29,15 @@ class MyMainWindow(VCPMainWindow):
             QtCore.Qt.CustomizeWindowHint)
             # | QtCore.Qt.WindowStaysOnTopHint
 
-        self.drillKeyPad.buttonClicked.connect(self.drillOpHandleKeys)
+        self.drillKeyPad.buttonClicked.connect(self.drillHandleKeys)
+        self.drillBackspace.clicked.connect(self.drillHandleBackspace)
+        self.coordKeyPad.buttonClicked.connect(self.coordOpHandleKeys)
+        self.coordListAddBtn.clicked.connect(self.coordListAppend)
+        self.coordListBkspBtn.clicked.connect(self.coordHandleBackspace)
+        self.coordListMoveUpBtn.clicked.connect(self.coordHandleMoveUp)
+        self.coordListMoveDownBtn.clicked.connect(self.coordHandleMoveDown)
+        self.coordListClearBtn.clicked.connect(self.coordHandleClear)
+        self.coordListRemoveBtn.clicked.connect(self.coordHandleRemoveLine)
         self.controlBtnGrp.buttonClicked.connect(self.controlChangePage)
         self.droBtnGrp.buttonClicked.connect(self.droChangePage)
         self.mainBtnGrp.buttonClicked.connect(self.mainChangePage)
@@ -42,8 +50,34 @@ class MyMainWindow(VCPMainWindow):
         self.loadGcode.clicked.connect(self.loadSmartGcode)
 
 
-    def drillOpHandleKeys(self, button):
+    def drillHandleKeys(self, button):
         btnHandler.drillOpHandleKeys(self, button)
+
+    def drillHandleBackspace(self):
+        btnHandler.drillOpBackspace(self)
+
+    def coordOpHandleKeys(self, button):
+        btnHandler.coordOpHandleKeys(self, button)
+
+    def coordListAppend(self):
+        btnHandler.coordListAddRow(self)
+
+    def coordHandleBackspace(self):
+        btnHandler.coordListBackspace(self)
+
+    def coordHandleMoveUp(self):
+        btnHandler.coordListMoveUp(self)
+
+    def coordHandleMoveDown(self):
+        btnHandler.coordListMoveDown(self)
+
+    def coordHandleClear(self):
+        btnHandler.coordListClear(self)
+
+
+    def coordHandleRemoveLine(self):
+        btnHandler.coordListRemoveLine(self)
+
 
     def mainChangePage(self, button):
         self.mainStack.setCurrentIndex(button.property('page'))
