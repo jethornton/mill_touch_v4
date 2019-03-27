@@ -436,6 +436,25 @@
                      <property name="spacing">
                       <number>5</number>
                      </property>
+                     <item row="1" column="2">
+                      <widget class="QLineEdit" name="drillHoleDiameter">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>100</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
                      <item row="1" column="6">
                       <spacer name="horizontalSpacer">
                        <property name="orientation">
@@ -463,6 +482,9 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
                       </widget>
                      </item>
                      <item row="2" column="2">
@@ -478,6 +500,9 @@
                          <width>100</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                       <property name="readOnly">
+                        <bool>true</bool>
                        </property>
                       </widget>
                      </item>
@@ -495,21 +520,8 @@
                          <height>16777215</height>
                         </size>
                        </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="2">
-                      <widget class="QLineEdit" name="drillHoleDiameter">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>100</width>
-                         <height>16777215</height>
-                        </size>
+                       <property name="readOnly">
+                        <bool>true</bool>
                        </property>
                       </widget>
                      </item>
@@ -527,6 +539,9 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
                       </widget>
                      </item>
                      <item row="3" column="2">
@@ -542,6 +557,9 @@
                          <width>100</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                       <property name="readOnly">
+                        <bool>true</bool>
                        </property>
                       </widget>
                      </item>
@@ -559,10 +577,13 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
                       </widget>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QCheckBox" name="checkBox">
+                      <widget class="QCheckBox" name="drillOpChkBox">
                        <property name="text">
                         <string>Enable</string>
                        </property>
@@ -578,7 +599,8 @@
                      <item row="3" column="0">
                       <widget class="QCheckBox" name="checkBox_3">
                        <property name="text">
-                        <string>Add Tip to Depth</string>
+                        <string>Add Tip
+to Depth</string>
                        </property>
                       </widget>
                      </item>
@@ -923,7 +945,11 @@ List</string>
                       </widget>
                      </item>
                      <item row="4" column="6" colspan="2">
-                      <widget class="QLineEdit" name="coordListY"/>
+                      <widget class="QLineEdit" name="coordListY">
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
                      </item>
                      <item row="4" column="5">
                       <widget class="QPushButton" name="pushButton_75">
@@ -942,7 +968,11 @@ List</string>
                       </widget>
                      </item>
                      <item row="3" column="6" colspan="2">
-                      <widget class="QLineEdit" name="coordListX"/>
+                      <widget class="QLineEdit" name="coordListX">
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
                      </item>
                      <item row="9" column="7">
                       <widget class="QPushButton" name="pushButton_29">
@@ -962,7 +992,11 @@ List</string>
                       </widget>
                      </item>
                      <item row="5" column="6" colspan="2">
-                      <widget class="QLineEdit" name="coordListZ"/>
+                      <widget class="QLineEdit" name="coordListZ">
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
                      </item>
                      <item row="2" column="0" rowspan="13" colspan="5">
                       <widget class="QListWidget" name="coordListWidget">
@@ -971,6 +1005,15 @@ List</string>
                          <horstretch>0</horstretch>
                          <verstretch>0</verstretch>
                         </sizepolicy>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::Box</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Plain</enum>
+                       </property>
+                       <property name="editTriggers">
+                        <set>QAbstractItemView::NoEditTriggers</set>
                        </property>
                        <property name="alternatingRowColors">
                         <bool>true</bool>
@@ -995,7 +1038,90 @@ List</string>
                   </item>
                  </layout>
                 </widget>
-                <widget class="QWidget" name="page_3"/>
+                <widget class="QWidget" name="page_3">
+                 <layout class="QVBoxLayout" name="verticalLayout_23">
+                  <item>
+                   <widget class="QWidget" name="gridWidget" native="true">
+                    <layout class="QGridLayout" name="gridLayout_27">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="spacing">
+                      <number>5</number>
+                     </property>
+                     <item row="2" column="1">
+                      <widget class="QPushButton" name="pushButton_78">
+                       <property name="text">
+                        <string>Move
+Up</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QPushButton" name="pushButton_77">
+                       <property name="text">
+                        <string>Move
+Down</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="1">
+                      <widget class="QPushButton" name="gcodeAppendBtn">
+                       <property name="text">
+                        <string>Append
+G code</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1">
+                      <widget class="QPushButton" name="clearGcodeBtn">
+                       <property name="text">
+                        <string>Clear
+G code</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QPushButton" name="pushButton_79">
+                       <property name="text">
+                        <string>Clear
+Line</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1">
+                      <widget class="QPushButton" name="preambleAddBtn">
+                       <property name="text">
+                        <string>Add
+Preamble</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="7" column="1">
+                      <widget class="QPushButton" name="postambleAppendBtn">
+                       <property name="text">
+                        <string>Append
+Postamble</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0" rowspan="8">
+                      <widget class="QListWidget" name="gcodeListWidget"/>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
                </widget>
               </item>
               <item>
@@ -1030,7 +1156,7 @@ List</string>
                   </widget>
                  </item>
                  <item row="0" column="3">
-                  <widget class="QPushButton" name="loadGcode">
+                  <widget class="QPushButton" name="gcodeLoadBtn">
                    <property name="text">
                     <string>Load</string>
                    </property>
@@ -1122,7 +1248,7 @@ List</string>
              <layout class="QVBoxLayout" name="verticalLayout_11">
               <item>
                <widget class="QWidget" name="gridWidget" native="true">
-                <layout class="QGridLayout" name="gridLayout_11" rowstretch="0,0">
+                <layout class="QGridLayout" name="gridLayout_11" rowstretch="0,0,0">
                  <property name="leftMargin">
                   <number>5</number>
                  </property>
@@ -1138,20 +1264,14 @@ List</string>
                  <property name="spacing">
                   <number>5</number>
                  </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_11">
-                   <property name="frameShape">
-                    <enum>QFrame::Box</enum>
-                   </property>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="gcodePreambleLine">
                    <property name="text">
-                    <string>Machine Settings</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <string>G20 G17 G40 G49 G64 P0.005 G80 G90 G92.1 G94</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="0">
+                 <item row="2" column="1">
                   <spacer name="verticalSpacer_4">
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
@@ -1163,6 +1283,26 @@ List</string>
                     </size>
                    </property>
                   </spacer>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="label_27">
+                   <property name="text">
+                    <string>Preamble</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0" colspan="2">
+                  <widget class="QLabel" name="label_11">
+                   <property name="frameShape">
+                    <enum>QFrame::Box</enum>
+                   </property>
+                   <property name="text">
+                    <string>Machine Settings</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </widget>

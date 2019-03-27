@@ -82,5 +82,3 @@ def coordListRemoveLine(parent):
     #count()
     parent.coordListWidget.takeItem(parent.coordListWidget.currentRow())
 
-
-

@@ -10,25 +10,36 @@ QPushButton {
     border-radius: 4px;
     min-width: 45px;
     min-height: 45px;
-}
-
-QCheckBox {
-    min-width: 45px;
-    min-height: 45px;
+    border-color: #000000;
 }
 
 QPushButton:disabled {
-    border-color: #404040;
+    border-color: #999999;
 }
 
 QPushButton:checked {
     border-color: #00EE00;
 }
-/*
-QPushButton:enabled {
-    border-color: black;
+
+QCheckBox {
+    min-width: 100px;
+    min-height: 45px;
 }
 
+QCheckBox::indicator {
+    min-width: 40px;
+    min-height: 40px;
+}
+
+/*QCheckBox::indicator { width: npx; height: mpx;}*/
+
+QListWidget:alternate {
+    background: #DBDBDB;
+}
+
+/*
+
+:alternate 
 
 ActionButton:disabled {
     border-color: #404040;

@@ -13,15 +13,13 @@ import mill_touch_v4.helptext as helptext
 # Setup Button Handler
 import mill_touch_v4.button_handler as btnHandler
 
-# Smart G code thingy
-import linuxcnc
-
+# Setup the G code Generator
+import mill_touch_v4.gcode_gen as gcodeGen
 
 class MyMainWindow(VCPMainWindow):
     """Main window class for the VCP."""
     def __init__(self, *args, **kwargs):
         super(MyMainWindow, self).__init__(*args, **kwargs)
-        self.emcCommand = linuxcnc.command()
 
         # Hide Window Title Bar
         self.setWindowFlags(
@@ -38,6 +36,10 @@ class MyMainWindow(VCPMainWindow):
         self.coordListMoveDownBtn.clicked.connect(self.coordHandleMoveDown)
         self.coordListClearBtn.clicked.connect(self.coordHandleClear)
         self.coordListRemoveBtn.clicked.connect(self.coordHandleRemoveLine)
+        self.preambleAddBtn.clicked.connect(self.preambleAdd)
+        self.gcodeAppendBtn.clicked.connect(self.gcodeAppend)
+        self.postambleAppendBtn.clicked.connect(self.postambleAppend)
+        self.gcodeLoadBtn.clicked.connect(self.gcodeLoad)
         self.controlBtnGrp.buttonClicked.connect(self.controlChangePage)
         self.droBtnGrp.buttonClicked.connect(self.droChangePage)
         self.mainBtnGrp.buttonClicked.connect(self.mainChangePage)
@@ -47,8 +49,6 @@ class MyMainWindow(VCPMainWindow):
         self.mdiEntryBtn.clicked.connect(self.mdiEntryPage)
         self.mdiLoad.clicked.connect(self.mdiSetLabels)
         self.smartGcodeBtnGrp.buttonClicked.connect(self.smartChangePage)
-        self.loadGcode.clicked.connect(self.loadSmartGcode)
-
 
     def drillHandleKeys(self, button):
         btnHandler.drillOpHandleKeys(self, button)
@@ -74,10 +74,20 @@ class MyMainWindow(VCPMainWindow):
     def coordHandleClear(self):
         btnHandler.coordListClear(self)
 
-
     def coordHandleRemoveLine(self):
         btnHandler.coordListRemoveLine(self)
 
+    def preambleAdd(self):
+        gcodeGen.preambleAdd(self)
+
+    def gcodeAppend(self):
+        gcodeGen.gcodeAppend(self)
+
+    def postambleAppend(self):
+        gcodeGen.postambleAppend(self)
+
+    def gcodeLoad(self):
+        gcodeGen.gcodeLoad(self)
 
     def mainChangePage(self, button):
         self.mainStack.setCurrentIndex(button.property('page'))
@@ -137,11 +147,6 @@ class MyMainWindow(VCPMainWindow):
         if len(self.mdiEntry.text()) > 0:
             text = self.mdiEntry.text()[:-1]
             self.mdiEntry.setText(text)
-
-
-
-    def loadSmartGcode(self):
-        self.emcCommand.program_open('/tmp/qtpyvcp.ngc')
 
     def on_exitBtn_clicked(self):
         self.app.quit()
