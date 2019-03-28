@@ -1,9 +1,9 @@
 
-def drillOpHandleKeys(parent, button):
+def holeOpsHandleKeys(parent, button):
     #print(button.text())
     #print(parent.drillOpBtnGrp.checkedButton().objectName())
     #print(parent.drillOpBtnGrp.checkedButton().property('test'))
-    entryPoint = parent.drillOpBtnGrp.checkedButton().property('labelName')
+    entryPoint = parent.holeKeyPad.checkedButton().property('labelName')
     drillLabel = getattr(parent, entryPoint)
     # drillOpBtnGrp
     #print(dir(parent.sender().button))

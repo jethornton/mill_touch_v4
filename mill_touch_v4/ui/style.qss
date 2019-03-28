@@ -1,8 +1,8 @@
-/*QWidget {
+QWidget {
     border-style: solid;
     border-width: 1px;
-    border-color: black;
-}*/
+    border-color: #9C9C9C;
+}
 
 QPushButton {
     border-style: solid;

@@ -27,7 +27,7 @@ class MyMainWindow(VCPMainWindow):
             QtCore.Qt.CustomizeWindowHint)
             # | QtCore.Qt.WindowStaysOnTopHint
 
-        self.drillKeyPad.buttonClicked.connect(self.drillHandleKeys)
+        self.holeKeyPad.buttonClicked.connect(self.holeHandleKeys)
         self.drillBackspace.clicked.connect(self.drillHandleBackspace)
         self.coordKeyPad.buttonClicked.connect(self.coordOpHandleKeys)
         self.coordListAddBtn.clicked.connect(self.coordListAppend)
@@ -50,8 +50,8 @@ class MyMainWindow(VCPMainWindow):
         self.mdiLoad.clicked.connect(self.mdiSetLabels)
         self.smartGcodeBtnGrp.buttonClicked.connect(self.smartChangePage)
 
-    def drillHandleKeys(self, button):
-        btnHandler.drillOpHandleKeys(self, button)
+    def holeHandleKeys(self, button):
+        btnHandler.holeOpsHandleKeys(self, button)
 
     def drillHandleBackspace(self):
         btnHandler.drillOpBackspace(self)
@@ -99,7 +99,15 @@ class MyMainWindow(VCPMainWindow):
         self.droStack.setCurrentIndex(button.property('page'))
 
     def smartChangePage(self, button):
+        #self.pushButton_58.setChecked(True)
+        #self.pushButton_113.setAutoExclusive(False)
+        #self.pushButton_113.setChecked(False)
+        #self.pushButton_113.setAutoExclusive(True)
+        #checkedBtn = self.holeOpBtnGrp.checkedButton()
+        #checkedBtn.setChecked(False)
         self.smartStack.setCurrentIndex(button.property('page'))
+        if button.property('buttonName'):
+            getattr(self, button.property('buttonName')).setChecked(True)
 
     def mdiHelpPage(self, button):
         self.mdiStack.setCurrentIndex(1)
