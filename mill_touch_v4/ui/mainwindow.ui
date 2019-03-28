@@ -263,15 +263,32 @@ Directory</string>
                   <number>5</number>
                  </property>
                  <item row="0" column="3">
+                  <widget class="QPushButton" name="pushButton_61">
+                   <property name="text">
+                    <string>Chamfer</string>
+                   </property>
+                   <property name="page" stdset="0">
+                    <number>3</number>
+                   </property>
+                   <property name="buttonName" stdset="0">
+                    <string>chamferToolBtn</string>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">smartGcodeBtnGrp</string>
+                   </attribute>
+                  </widget>
+                 </item>
+                 <item row="0" column="4">
                   <widget class="QPushButton" name="pushButton_80">
                    <property name="text">
-                    <string>Tap</string>
+                    <string>Rigid
+Tap</string>
                    </property>
                    <property name="checkable">
                     <bool>true</bool>
                    </property>
                    <property name="page" stdset="0">
-                    <number>3</number>
+                    <number>4</number>
                    </property>
                    <property name="buttonName" stdset="0">
                     <string>tapToolBtn</string>
@@ -323,7 +340,7 @@ Drill</string>
                    </attribute>
                   </widget>
                  </item>
-                 <item row="0" column="4">
+                 <item row="0" column="6">
                   <widget class="QPushButton" name="pushButton_26">
                    <property name="text">
                     <string>XY
@@ -333,7 +350,7 @@ Coord</string>
                     <bool>true</bool>
                    </property>
                    <property name="page" stdset="0">
-                    <number>4</number>
+                    <number>6</number>
                    </property>
                    <property name="buttonName" stdset="0">
                     <string>coordXBtn</string>
@@ -343,16 +360,17 @@ Coord</string>
                    </attribute>
                   </widget>
                  </item>
-                 <item row="0" column="5">
+                 <item row="0" column="7">
                   <widget class="QPushButton" name="pushButton_27">
                    <property name="text">
-                    <string>G code</string>
+                    <string>Generate
+G code</string>
                    </property>
                    <property name="checkable">
                     <bool>true</bool>
                    </property>
                    <property name="page" stdset="0">
-                    <number>5</number>
+                    <number>7</number>
                    </property>
                    <property name="buttonName" stdset="0">
                     <bool>false</bool>
@@ -375,6 +393,23 @@ Coord</string>
                    </property>
                    <property name="buttonName" stdset="0">
                     <string>reamlToolBtn</string>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">smartGcodeBtnGrp</string>
+                   </attribute>
+                  </widget>
+                 </item>
+                 <item row="0" column="5">
+                  <widget class="QPushButton" name="pushButton_85">
+                   <property name="text">
+                    <string>Thread
+Milling</string>
+                   </property>
+                   <property name="page" stdset="0">
+                    <number>5</number>
+                   </property>
+                   <property name="buttonName" stdset="0">
+                    <string>threadMillToolBtn</string>
                    </property>
                    <attribute name="buttonGroup">
                     <string notr="true">smartGcodeBtnGrp</string>
@@ -1210,6 +1245,66 @@ are required</string>
                   <property name="checkable">
                    <bool>true</bool>
                   </property>
+                  <property name="labelName" stdset="0">
+                   <string>reamToolLbl</string>
+                  </property>
+                  <attribute name="buttonGroup">
+                   <string notr="true">holeOpBtnGrp</string>
+                  </attribute>
+                 </widget>
+                 <widget class="QLineEdit" name="reamToolLbl">
+                  <property name="geometry">
+                   <rect>
+                    <x>450</x>
+                    <y>140</y>
+                    <width>113</width>
+                    <height>23</height>
+                   </rect>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QWidget" name="page_7">
+                 <widget class="QLabel" name="label_33">
+                  <property name="geometry">
+                   <rect>
+                    <x>250</x>
+                    <y>90</y>
+                    <width>61</width>
+                    <height>15</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string>Chamfer</string>
+                  </property>
+                 </widget>
+                 <widget class="QLineEdit" name="chamferToolLbl">
+                  <property name="geometry">
+                   <rect>
+                    <x>420</x>
+                    <y>170</y>
+                    <width>113</width>
+                    <height>23</height>
+                   </rect>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="chamferToolBtn">
+                  <property name="geometry">
+                   <rect>
+                    <x>300</x>
+                    <y>170</y>
+                    <width>82</width>
+                    <height>49</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string>Tool</string>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="labelName" stdset="0">
+                   <string>chamferToolLbl</string>
+                  </property>
                  </widget>
                 </widget>
                 <widget class="QWidget" name="page_4">
@@ -1240,6 +1335,63 @@ are required</string>
                   </property>
                   <property name="checkable">
                    <bool>true</bool>
+                  </property>
+                  <property name="labelName" stdset="0">
+                   <string>tapToolLbl</string>
+                  </property>
+                 </widget>
+                 <widget class="QLineEdit" name="tapToolLbl">
+                  <property name="geometry">
+                   <rect>
+                    <x>420</x>
+                    <y>190</y>
+                    <width>113</width>
+                    <height>23</height>
+                   </rect>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QWidget" name="page_8">
+                 <widget class="QPushButton" name="threadMillToolBtn">
+                  <property name="geometry">
+                   <rect>
+                    <x>190</x>
+                    <y>190</y>
+                    <width>82</width>
+                    <height>49</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string>Tool</string>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="labelName" stdset="0">
+                   <string>threadMillToolLbl</string>
+                  </property>
+                 </widget>
+                 <widget class="QLineEdit" name="threadMillToolLbl">
+                  <property name="geometry">
+                   <rect>
+                    <x>350</x>
+                    <y>200</y>
+                    <width>113</width>
+                    <height>23</height>
+                   </rect>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_34">
+                  <property name="geometry">
+                   <rect>
+                    <x>250</x>
+                    <y>70</y>
+                    <width>111</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string>Thread Milling</string>
                   </property>
                  </widget>
                 </widget>
@@ -1304,7 +1456,7 @@ Down</string>
                         <string>coordListZ</string>
                        </property>
                        <attribute name="buttonGroup">
-                        <string notr="true">coordListBtnGrp</string>
+                        <string notr="true">holeOpBtnGrp</string>
                        </attribute>
                       </widget>
                      </item>
@@ -1346,7 +1498,7 @@ List</string>
                         <string>coordListX</string>
                        </property>
                        <attribute name="buttonGroup">
-                        <string notr="true">coordListBtnGrp</string>
+                        <string notr="true">holeOpBtnGrp</string>
                        </attribute>
                       </widget>
                      </item>
@@ -1476,7 +1628,7 @@ List</string>
                         <string>coordListY</string>
                        </property>
                        <attribute name="buttonGroup">
-                        <string notr="true">coordListBtnGrp</string>
+                        <string notr="true">holeOpBtnGrp</string>
                        </attribute>
                       </widget>
                      </item>
@@ -3702,7 +3854,6 @@ Ops</string>
   <buttongroup name="coordKeyPad"/>
   <buttongroup name="mdiBtnGrp"/>
   <buttongroup name="controlBtnGrp"/>
-  <buttongroup name="coordListBtnGrp"/>
   <buttongroup name="droBtnGrp"/>
   <buttongroup name="holeOpBtnGrp"/>
   <buttongroup name="holeKeyPad"/>
