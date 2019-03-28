@@ -8,15 +8,15 @@ def preambleAdd(parent):
 def gcodeAppend(parent):
     if parent.drillOpChkBox.isChecked():
         parent.gcodeListWidget.addItem('; Drill Op')
-        if parent.drillRPM.text():
-            parent.gcodeListWidget.addItem('M3 S{}'.format(parent.drillRPM.text()))
-        if parent.drillFeed.text():
-            parent.gcodeListWidget.addItem('F{}'.format(parent.drillFeed.text()))
+        if parent.drillRPMLbl.text():
+            parent.gcodeListWidget.addItem('M3 S{}'.format(parent.drillRPMLbl.text()))
+        if parent.drillFeedLbl.text():
+            parent.gcodeListWidget.addItem('F{}'.format(parent.drillFeedLbl.text()))
         if parent.coordListWidget.count() > 0: # toss out an error if not
             for i in range(parent.coordListWidget.count()):
                 coordinates = parent.coordListWidget.item(i).text()
-                zDepth = parent.drillDepth.text()
-                zClear = parent.drillRetract.text()
+                zDepth = parent.drillDepthLbl.text()
+                zClear = parent.drillRetractLbl.text()
                 if i == 0:
                     parent.gcodeListWidget.addItem('G81 {} Z{} R{}'.format(coordinates, zDepth, zClear))
                 else:
@@ -37,3 +37,5 @@ def gcodeLoad(parent):
         f.write('\n'.join(gcode))
     emcCommand.program_open('/tmp/qtpyvcp.ngc')
 
+def clearGcode(parent):
+    parent.gcodeListWidget.clear()

@@ -336,7 +336,7 @@ Coord</string>
                     <number>4</number>
                    </property>
                    <property name="buttonName" stdset="0">
-                    <bool>false</bool>
+                    <string>coordXBtn</string>
                    </property>
                    <attribute name="buttonGroup">
                     <string notr="true">smartGcodeBtnGrp</string>
@@ -814,6 +814,12 @@ Coord</string>
                        <property name="checkable">
                         <bool>true</bool>
                        </property>
+                       <property name="labelName" stdset="0">
+                        <string>drillToolLbl</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">holeOpBtnGrp</string>
+                       </attribute>
                       </widget>
                      </item>
                      <item row="1" column="0">
@@ -840,7 +846,7 @@ Angle</string>
                         <bool>true</bool>
                        </property>
                        <property name="labelName" stdset="0">
-                        <string>drillTipAngle</string>
+                        <string>drillTipAngleLbl</string>
                        </property>
                        <attribute name="buttonGroup">
                         <string notr="true">holeOpBtnGrp</string>
@@ -848,7 +854,7 @@ Angle</string>
                       </widget>
                      </item>
                      <item row="1" column="7">
-                      <widget class="QLineEdit" name="drillTipAngle">
+                      <widget class="QLineEdit" name="drillTipAngleLbl">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                          <horstretch>0</horstretch>
@@ -867,7 +873,7 @@ Angle</string>
                       </widget>
                      </item>
                      <item row="3" column="6">
-                      <widget class="QPushButton" name="drillDelta">
+                      <widget class="QPushButton" name="pushButton_84">
                        <property name="text">
                         <string>Delta</string>
                        </property>
@@ -875,7 +881,7 @@ Angle</string>
                         <bool>true</bool>
                        </property>
                        <property name="labelName" stdset="0">
-                        <string>drillDelta</string>
+                        <string>drillDeltaLbl</string>
                        </property>
                        <attribute name="buttonGroup">
                         <string notr="true">holeOpBtnGrp</string>
@@ -883,7 +889,7 @@ Angle</string>
                       </widget>
                      </item>
                      <item row="3" column="7">
-                      <widget class="QLineEdit" name="lineEdit_6">
+                      <widget class="QLineEdit" name="drillDeltaLbl">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                          <horstretch>0</horstretch>
@@ -902,7 +908,7 @@ Angle</string>
                       </widget>
                      </item>
                      <item row="2" column="7">
-                      <widget class="QLineEdit" name="drillHoleDiameter">
+                      <widget class="QLineEdit" name="drillHoleDiameterLbl">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                          <horstretch>0</horstretch>
@@ -930,7 +936,7 @@ Diameter</string>
                         <bool>true</bool>
                        </property>
                        <property name="labelName" stdset="0">
-                        <string>drillHoleDiameter</string>
+                        <string>drillHoleDiameterLbl</string>
                        </property>
                        <attribute name="buttonGroup">
                         <string notr="true">holeOpBtnGrp</string>
@@ -946,7 +952,7 @@ Diameter</string>
                         <bool>true</bool>
                        </property>
                        <property name="labelName" stdset="0">
-                        <string>drillFeed</string>
+                        <string>drillFeedLbl</string>
                        </property>
                        <attribute name="buttonGroup">
                         <string notr="true">holeOpBtnGrp</string>
@@ -954,7 +960,7 @@ Diameter</string>
                       </widget>
                      </item>
                      <item row="1" column="4">
-                      <widget class="QLineEdit" name="drillFeed">
+                      <widget class="QLineEdit" name="drillFeedLbl">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                          <horstretch>0</horstretch>
@@ -988,7 +994,7 @@ Diameter</string>
                         <bool>true</bool>
                        </property>
                        <property name="labelName" stdset="0">
-                        <string>drillDepth</string>
+                        <string>drillDepthLbl</string>
                        </property>
                        <attribute name="buttonGroup">
                         <string notr="true">holeOpBtnGrp</string>
@@ -996,7 +1002,7 @@ Diameter</string>
                       </widget>
                      </item>
                      <item row="2" column="4">
-                      <widget class="QLineEdit" name="drillDepth">
+                      <widget class="QLineEdit" name="drillDepthLbl">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                          <horstretch>0</horstretch>
@@ -1030,7 +1036,7 @@ Diameter</string>
                         <bool>true</bool>
                        </property>
                        <property name="labelName" stdset="0">
-                        <string>drillRetract</string>
+                        <string>drillRetractLbl</string>
                        </property>
                        <attribute name="buttonGroup">
                         <string notr="true">holeOpBtnGrp</string>
@@ -1038,7 +1044,7 @@ Diameter</string>
                       </widget>
                      </item>
                      <item row="3" column="4">
-                      <widget class="QLineEdit" name="drillRetract">
+                      <widget class="QLineEdit" name="drillRetractLbl">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                          <horstretch>0</horstretch>
@@ -1094,7 +1100,7 @@ are required</string>
                         <bool>true</bool>
                        </property>
                        <property name="labelName" stdset="0">
-                        <string>drillRPM</string>
+                        <string>drillRPMLbl</string>
                        </property>
                        <attribute name="buttonGroup">
                         <string notr="true">holeOpBtnGrp</string>
@@ -1102,7 +1108,7 @@ are required</string>
                       </widget>
                      </item>
                      <item row="4" column="4">
-                      <widget class="QLineEdit" name="drillRPM">
+                      <widget class="QLineEdit" name="drillRPMLbl">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                          <horstretch>0</horstretch>
@@ -1121,7 +1127,7 @@ are required</string>
                       </widget>
                      </item>
                      <item row="1" column="2">
-                      <widget class="QLineEdit" name="lineEdit"/>
+                      <widget class="QLineEdit" name="drillToolLbl"/>
                      </item>
                     </layout>
                    </widget>

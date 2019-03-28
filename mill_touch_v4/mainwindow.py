@@ -27,7 +27,7 @@ class MyMainWindow(VCPMainWindow):
             QtCore.Qt.CustomizeWindowHint)
             # | QtCore.Qt.WindowStaysOnTopHint
 
-        self.holeKeyPad.buttonClicked.connect(self.holeHandleKeys)
+        self.holeKeyPad.buttonClicked.connect(self.holeOpsHandleKeys)
         self.drillBackspace.clicked.connect(self.drillHandleBackspace)
         self.coordKeyPad.buttonClicked.connect(self.coordOpHandleKeys)
         self.coordListAddBtn.clicked.connect(self.coordListAppend)
@@ -40,6 +40,7 @@ class MyMainWindow(VCPMainWindow):
         self.gcodeAppendBtn.clicked.connect(self.gcodeAppend)
         self.postambleAppendBtn.clicked.connect(self.postambleAppend)
         self.gcodeLoadBtn.clicked.connect(self.gcodeLoad)
+        self.clearGcodeBtn.clicked.connect(self.clearGcode)
         self.controlBtnGrp.buttonClicked.connect(self.controlChangePage)
         self.droBtnGrp.buttonClicked.connect(self.droChangePage)
         self.mainBtnGrp.buttonClicked.connect(self.mainChangePage)
@@ -50,7 +51,7 @@ class MyMainWindow(VCPMainWindow):
         self.mdiLoad.clicked.connect(self.mdiSetLabels)
         self.smartGcodeBtnGrp.buttonClicked.connect(self.smartChangePage)
 
-    def holeHandleKeys(self, button):
+    def holeOpsHandleKeys(self, button):
         btnHandler.holeOpsHandleKeys(self, button)
 
     def drillHandleBackspace(self):
@@ -88,6 +89,11 @@ class MyMainWindow(VCPMainWindow):
 
     def gcodeLoad(self):
         gcodeGen.gcodeLoad(self)
+
+    def clearGcode(self):
+        gcodeGen.clearGcode(self)
+
+
 
     def mainChangePage(self, button):
         self.mainStack.setCurrentIndex(button.property('page'))
