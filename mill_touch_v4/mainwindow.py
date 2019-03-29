@@ -16,6 +16,8 @@ import mill_touch_v4.button_handler as btnHandler
 # Setup the G code Generator
 import mill_touch_v4.gcode_gen as gcodeGen
 
+import linuxcnc
+
 class MyMainWindow(VCPMainWindow):
     """Main window class for the VCP."""
     def __init__(self, *args, **kwargs):
@@ -29,7 +31,6 @@ class MyMainWindow(VCPMainWindow):
 
         self.holeKeyPad.buttonClicked.connect(self.holeOpsHandleKeys)
         self.drillBackspace.clicked.connect(self.drillHandleBackspace)
-        self.coordKeyPad.buttonClicked.connect(self.coordOpHandleKeys)
         self.coordListAddBtn.clicked.connect(self.coordListAppend)
         self.coordListBkspBtn.clicked.connect(self.coordHandleBackspace)
         self.coordListMoveUpBtn.clicked.connect(self.coordHandleMoveUp)
@@ -50,15 +51,23 @@ class MyMainWindow(VCPMainWindow):
         self.mdiEntryBtn.clicked.connect(self.mdiEntryPage)
         self.mdiLoad.clicked.connect(self.mdiSetLabels)
         self.smartGcodeBtnGrp.buttonClicked.connect(self.smartChangePage)
+        self.reloadProgramBtn.clicked.connect(self.reloadProgram)
+
+    def reloadProgram(self):
+        emcStat = linuxcnc.stat()
+        emcStat.poll()
+        gcodeFile = emcStat.file
+        print(gcodeFile)
+        emcCommand = linuxcnc.command()
+        emcCommand.reset_interpreter()
+        emcCommand.wait_complete()
+        emcCommand.program_open(gcodeFile)
 
     def holeOpsHandleKeys(self, button):
         btnHandler.holeOpsHandleKeys(self, button)
 
     def drillHandleBackspace(self):
         btnHandler.drillOpBackspace(self)
-
-    def coordOpHandleKeys(self, button):
-        btnHandler.coordOpHandleKeys(self, button)
 
     def coordListAppend(self):
         btnHandler.coordListAddRow(self)

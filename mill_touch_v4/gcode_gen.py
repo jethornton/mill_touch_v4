@@ -29,12 +29,12 @@ def postambleAppend(parent):
 
 def gcodeLoad(parent):
     emcCommand = linuxcnc.command()
-    print(parent.gcodeListWidget.item(0).text())
     gcode = []
     with open('/tmp/qtpyvcp.ngc','w') as f:
         for i in range(parent.gcodeListWidget.count()):
             gcode.append(parent.gcodeListWidget.item(i).text())
         f.write('\n'.join(gcode))
+    emcCommand.reset_interpreter()
     emcCommand.program_open('/tmp/qtpyvcp.ngc')
 
 def clearGcode(parent):

@@ -16,23 +16,11 @@ def holeOpsHandleKeys(parent, button):
     drillLabel.setText(text)
 
 def drillOpBackspace(parent):
-    entryPoint = parent.drillOpBtnGrp.checkedButton().property('labelName')
+    entryPoint = parent.holeOpBtnGrp.checkedButton().property('labelName')
     drillLabel = getattr(parent, entryPoint)
     if len(drillLabel.text()) > 0:
         text = drillLabel.text()[:-1]
         drillLabel.setText(text)
-
-def coordOpHandleKeys(parent, button):
-    if parent.coordListBtnGrp.checkedButton():
-        entryPoint = parent.coordListBtnGrp.checkedButton().property('labelName')
-        coordLabel = getattr(parent, entryPoint)
-        char = str(button.text())
-        text = coordLabel.text() or '0'
-        if text != '0':
-            text += char
-        else:
-            text = char
-        coordLabel.setText(text)
 
 def coordListAddRow(parent):
     coords = ''

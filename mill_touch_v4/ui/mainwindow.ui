@@ -624,7 +624,7 @@ Milling</string>
                      <property name="spacing">
                       <number>5</number>
                      </property>
-                     <item row="4" column="3">
+                     <item row="4" column="4">
                       <widget class="QPushButton" name="pushButton_112">
                        <property name="text">
                         <string>Retract</string>
@@ -640,7 +640,7 @@ Milling</string>
                        </attribute>
                       </widget>
                      </item>
-                     <item row="2" column="3">
+                     <item row="2" column="4">
                       <widget class="QPushButton" name="pushButton_111">
                        <property name="text">
                         <string>Feed</string>
@@ -656,21 +656,21 @@ Milling</string>
                        </attribute>
                       </widget>
                      </item>
-                     <item row="2" column="0">
+                     <item row="2" column="1">
                       <widget class="QCheckBox" name="drillOpChkBox_2">
                        <property name="text">
                         <string>Enable</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="3" column="0">
+                     <item row="3" column="1">
                       <widget class="QCheckBox" name="checkBox_5">
                        <property name="text">
                         <string>Coolant</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="3" column="3">
+                     <item row="3" column="4">
                       <widget class="QPushButton" name="pushButton_110">
                        <property name="text">
                         <string>Depth</string>
@@ -686,7 +686,7 @@ Milling</string>
                        </attribute>
                       </widget>
                      </item>
-                     <item row="2" column="4">
+                     <item row="2" column="5">
                       <widget class="QLineEdit" name="spotFeed">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -705,7 +705,7 @@ Milling</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="5" column="4">
+                     <item row="5" column="5">
                       <widget class="QLineEdit" name="spotRPM">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -724,7 +724,7 @@ Milling</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="3" column="4">
+                     <item row="3" column="5">
                       <widget class="QLineEdit" name="spotDepth">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -743,7 +743,7 @@ Milling</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="5" column="3">
+                     <item row="5" column="4">
                       <widget class="QPushButton" name="pushButton_109">
                        <property name="text">
                         <string>RPM</string>
@@ -759,7 +759,7 @@ Milling</string>
                        </attribute>
                       </widget>
                      </item>
-                     <item row="4" column="4">
+                     <item row="4" column="5">
                       <widget class="QLineEdit" name="spotRetract">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -778,7 +778,7 @@ Milling</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="2" column="1">
+                     <item row="2" column="2">
                       <widget class="QPushButton" name="spotToolBtn">
                        <property name="text">
                         <string>Tool</string>
@@ -794,8 +794,21 @@ Milling</string>
                        </attribute>
                       </widget>
                      </item>
-                     <item row="2" column="2">
+                     <item row="2" column="3">
                       <widget class="QLineEdit" name="spotTool"/>
+                     </item>
+                     <item row="2" column="0">
+                      <spacer name="horizontalSpacer">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
                      </item>
                     </layout>
                    </widget>
@@ -1415,255 +1428,7 @@ are required</string>
                      <property name="spacing">
                       <number>5</number>
                      </property>
-                     <item row="2" column="6">
-                      <spacer name="verticalSpacer_7">
-                       <property name="orientation">
-                        <enum>Qt::Vertical</enum>
-                       </property>
-                       <property name="sizeHint" stdset="0">
-                        <size>
-                         <width>20</width>
-                         <height>40</height>
-                        </size>
-                       </property>
-                      </spacer>
-                     </item>
-                     <item row="10" column="6">
-                      <widget class="QPushButton" name="coordListRemoveBtn">
-                       <property name="text">
-                        <string>Remove
-Line</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="7">
-                      <widget class="QPushButton" name="coordListMoveDownBtn">
-                       <property name="text">
-                        <string>Move
-Down</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="5" column="5">
-                      <widget class="QPushButton" name="pushButton_76">
-                       <property name="text">
-                        <string>Z</string>
-                       </property>
-                       <property name="checkable">
-                        <bool>true</bool>
-                       </property>
-                       <property name="labelName" stdset="0">
-                        <string>coordListZ</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">holeOpBtnGrp</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="9" column="6">
-                      <widget class="QPushButton" name="pushButton_31">
-                       <property name="text">
-                        <string>.</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="1" column="6">
-                      <widget class="QPushButton" name="coordListMoveUpBtn">
-                       <property name="text">
-                        <string>Move
-Up</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="5">
-                      <widget class="QPushButton" name="coordListClearBtn">
-                       <property name="text">
-                        <string>Clear
-List</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="3" column="5">
-                      <widget class="QPushButton" name="coordXBtn">
-                       <property name="text">
-                        <string>X</string>
-                       </property>
-                       <property name="checkable">
-                        <bool>true</bool>
-                       </property>
-                       <property name="labelName" stdset="0">
-                        <string>coordListX</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">holeOpBtnGrp</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="7" column="7">
-                      <widget class="QPushButton" name="pushButton_35">
-                       <property name="text">
-                        <string>6</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="8" column="7">
-                      <widget class="QPushButton" name="pushButton_54">
-                       <property name="text">
-                        <string>3</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="8" column="6">
-                      <widget class="QPushButton" name="pushButton_50">
-                       <property name="text">
-                        <string>2</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="7" column="6">
-                      <widget class="QPushButton" name="pushButton_46">
-                       <property name="text">
-                        <string>5</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="6" column="5">
-                      <widget class="QPushButton" name="pushButton_47">
-                       <property name="text">
-                        <string>7</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="7" column="5">
-                      <widget class="QPushButton" name="pushButton_45">
-                       <property name="text">
-                        <string>4</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="6" column="6">
-                      <widget class="QPushButton" name="pushButton_48">
-                       <property name="text">
-                        <string>8</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="6" column="7">
-                      <widget class="QPushButton" name="pushButton_28">
-                       <property name="text">
-                        <string>9</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="8" column="5">
-                      <widget class="QPushButton" name="pushButton_49">
-                       <property name="text">
-                        <string>1</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="10" column="7">
-                      <widget class="QPushButton" name="coordListAddBtn">
-                       <property name="text">
-                        <string>Append</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="9" column="5">
-                      <widget class="QPushButton" name="pushButton_30">
-                       <property name="text">
-                        <string>0</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="4" column="6" colspan="2">
-                      <widget class="QLineEdit" name="coordListY">
-                       <property name="readOnly">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="4" column="5">
-                      <widget class="QPushButton" name="pushButton_75">
-                       <property name="text">
-                        <string>Y</string>
-                       </property>
-                       <property name="checkable">
-                        <bool>true</bool>
-                       </property>
-                       <property name="labelName" stdset="0">
-                        <string>coordListY</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">holeOpBtnGrp</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="3" column="6" colspan="2">
-                      <widget class="QLineEdit" name="coordListX">
-                       <property name="readOnly">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="9" column="7">
-                      <widget class="QPushButton" name="pushButton_29">
-                       <property name="text">
-                        <string>-</string>
-                       </property>
-                       <attribute name="buttonGroup">
-                        <string notr="true">coordKeyPad</string>
-                       </attribute>
-                      </widget>
-                     </item>
-                     <item row="10" column="5">
-                      <widget class="QPushButton" name="coordListBkspBtn">
-                       <property name="text">
-                        <string>Backspace</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="5" column="6" colspan="2">
-                      <widget class="QLineEdit" name="coordListZ">
-                       <property name="readOnly">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="2" column="0" rowspan="13" colspan="5">
+                     <item row="2" column="0" rowspan="9" colspan="5">
                       <widget class="QListWidget" name="coordListWidget">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1685,7 +1450,7 @@ List</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="1" column="0" colspan="5">
+                     <item row="0" column="0" colspan="8">
                       <widget class="QLabel" name="label_25">
                        <property name="frameShape">
                         <enum>QFrame::Box</enum>
@@ -1695,6 +1460,121 @@ List</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="10" column="5">
+                      <widget class="QPushButton" name="coordListBkspBtn">
+                       <property name="text">
+                        <string>Backspace</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="10" column="7">
+                      <widget class="QPushButton" name="coordListAddBtn">
+                       <property name="text">
+                        <string>Append</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="9" column="5">
+                      <widget class="QPushButton" name="pushButton_76">
+                       <property name="text">
+                        <string>Z</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="labelName" stdset="0">
+                        <string>coordListZ</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">holeOpBtnGrp</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="9" column="6" colspan="2">
+                      <widget class="QLineEdit" name="coordListZ">
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="8" column="5">
+                      <widget class="QPushButton" name="pushButton_75">
+                       <property name="text">
+                        <string>Y</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="labelName" stdset="0">
+                        <string>coordListY</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">holeOpBtnGrp</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="8" column="6" colspan="2">
+                      <widget class="QLineEdit" name="coordListY">
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="7" column="5">
+                      <widget class="QPushButton" name="coordXBtn">
+                       <property name="text">
+                        <string>X</string>
+                       </property>
+                       <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="labelName" stdset="0">
+                        <string>coordListX</string>
+                       </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">holeOpBtnGrp</string>
+                       </attribute>
+                      </widget>
+                     </item>
+                     <item row="7" column="6" colspan="2">
+                      <widget class="QLineEdit" name="coordListX">
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="5">
+                      <widget class="QPushButton" name="coordListRemoveBtn">
+                       <property name="text">
+                        <string>Remove
+Line</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="5">
+                      <widget class="QPushButton" name="coordListClearBtn">
+                       <property name="text">
+                        <string>Clear
+List</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="5">
+                      <widget class="QPushButton" name="coordListMoveUpBtn">
+                       <property name="text">
+                        <string>Move
+Up</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="5">
+                      <widget class="QPushButton" name="coordListMoveDownBtn">
+                       <property name="text">
+                        <string>Move
+Down</string>
                        </property>
                       </widget>
                      </item>
@@ -1798,6 +1678,21 @@ G code</string>
                </widget>
               </item>
              </layout>
+            </widget>
+            <widget class="QWidget" name="page_9">
+             <widget class="QLabel" name="label_35">
+              <property name="geometry">
+               <rect>
+                <x>340</x>
+                <y>100</y>
+                <width>141</width>
+                <height>71</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>Pocket Ops</string>
+              </property>
+             </widget>
             </widget>
             <widget class="QWidget" name="mainPage_4">
              <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -1989,8 +1884,8 @@ G code</string>
              <item row="0" column="2">
               <widget class="QPushButton" name="pushButton_13">
                <property name="text">
-                <string>Smart
-G code</string>
+                <string>Hole
+Ops</string>
                </property>
                <property name="checkable">
                 <bool>true</bool>
@@ -2003,7 +1898,7 @@ G code</string>
                </attribute>
               </widget>
              </item>
-             <item row="0" column="3">
+             <item row="0" column="4">
               <widget class="QPushButton" name="pushButton_4">
                <property name="text">
                 <string>Machine
@@ -2013,14 +1908,14 @@ Status</string>
                 <bool>true</bool>
                </property>
                <property name="page" stdset="0">
-                <number>3</number>
+                <number>4</number>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">mainBtnGrp</string>
                </attribute>
               </widget>
              </item>
-             <item row="0" column="4">
+             <item row="0" column="5">
               <widget class="QPushButton" name="pushButton_2">
                <property name="text">
                 <string>Machine
@@ -2030,7 +1925,7 @@ Settings</string>
                 <bool>true</bool>
                </property>
                <property name="page" stdset="0">
-                <number>4</number>
+                <number>5</number>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">mainBtnGrp</string>
@@ -2073,7 +1968,7 @@ Open</string>
                </attribute>
               </widget>
              </item>
-             <item row="0" column="5">
+             <item row="0" column="6">
               <widget class="QPushButton" name="pushButton_14">
                <property name="text">
                 <string>Import
@@ -2083,7 +1978,24 @@ DXF File</string>
                 <bool>true</bool>
                </property>
                <property name="page" stdset="0">
-                <number>5</number>
+                <number>6</number>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">mainBtnGrp</string>
+               </attribute>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QPushButton" name="pushButton_86">
+               <property name="text">
+                <string>Pocket
+Ops</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+               <property name="page" stdset="0">
+                <number>3</number>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">mainBtnGrp</string>
@@ -2112,6 +2024,17 @@ DXF File</string>
               <number>5</number>
              </property>
              <item row="0" column="7">
+              <widget class="ActionButton" name="actionbutton_5">
+               <property name="text">
+                <string>Program
+Run</string>
+               </property>
+               <property name="actionName" stdset="0">
+                <string>program.run</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="8">
               <widget class="ActionButton" name="actionbutton_6">
                <property name="text">
                 <string>Single
@@ -2147,7 +2070,7 @@ X Y Z 0</string>
                </property>
               </widget>
              </item>
-             <item row="0" column="8">
+             <item row="0" column="9">
               <widget class="ActionButton" name="actionbutton_7">
                <property name="text">
                 <string>Program
@@ -2166,7 +2089,7 @@ App</string>
                </property>
               </widget>
              </item>
-             <item row="0" column="9">
+             <item row="0" column="10">
               <widget class="ActionButton" name="actionbutton_4">
                <property name="text">
                 <string>Program
@@ -2201,18 +2124,7 @@ Tool 1</string>
                </property>
               </widget>
              </item>
-             <item row="0" column="6">
-              <widget class="ActionButton" name="actionbutton_5">
-               <property name="text">
-                <string>Program
-Run</string>
-               </property>
-               <property name="actionName" stdset="0">
-                <string>program.run</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="10">
+             <item row="0" column="11">
               <widget class="ActionButton" name="actionbutton_3">
                <property name="text">
                 <string>Program
@@ -2234,6 +2146,14 @@ All</string>
                </property>
                <property name="actionName" stdset="0">
                 <string>machine.home.all</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="6">
+              <widget class="QPushButton" name="reloadProgramBtn">
+               <property name="text">
+                <string>Reload
+Program</string>
                </property>
               </widget>
              </item>
@@ -3850,13 +3770,12 @@ Ops</string>
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="smartGcodeBtnGrp"/>
-  <buttongroup name="coordKeyPad"/>
-  <buttongroup name="mdiBtnGrp"/>
   <buttongroup name="controlBtnGrp"/>
-  <buttongroup name="droBtnGrp"/>
-  <buttongroup name="holeOpBtnGrp"/>
+  <buttongroup name="mdiBtnGrp"/>
   <buttongroup name="holeKeyPad"/>
   <buttongroup name="mainBtnGrp"/>
+  <buttongroup name="droBtnGrp"/>
+  <buttongroup name="smartGcodeBtnGrp"/>
+  <buttongroup name="holeOpBtnGrp"/>
  </buttongroups>
 </ui>
