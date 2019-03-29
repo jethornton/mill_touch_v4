@@ -95,56 +95,56 @@
                      <number>5</number>
                     </property>
                     <item row="3" column="7">
-                     <widget class="QPushButton" name="pushButton_20">
+                     <widget class="QPushButton" name="viewZ">
                       <property name="text">
                        <string>Z</string>
                       </property>
                      </widget>
                     </item>
                     <item row="4" column="7">
-                     <widget class="QPushButton" name="pushButton_19">
+                     <widget class="QPushButton" name="viewZ2">
                       <property name="text">
                        <string>Z2</string>
                       </property>
                      </widget>
                     </item>
                     <item row="7" column="7">
-                     <widget class="QPushButton" name="pushButton_24">
+                     <widget class="QPushButton" name="viewClear">
                       <property name="text">
                        <string>Clear</string>
                       </property>
                      </widget>
                     </item>
                     <item row="5" column="7">
-                     <widget class="QPushButton" name="pushButton_18">
+                     <widget class="QPushButton" name="viewZoomIn">
                       <property name="text">
                        <string>+</string>
                       </property>
                      </widget>
                     </item>
                     <item row="0" column="7">
-                     <widget class="QPushButton" name="pushButton_23">
+                     <widget class="QPushButton" name="viewP">
                       <property name="text">
                        <string>P</string>
                       </property>
                      </widget>
                     </item>
                     <item row="1" column="7">
-                     <widget class="QPushButton" name="pushButton_22">
+                     <widget class="QPushButton" name="viewX">
                       <property name="text">
                        <string>X</string>
                       </property>
                      </widget>
                     </item>
                     <item row="2" column="7">
-                     <widget class="QPushButton" name="pushButton_21">
+                     <widget class="QPushButton" name="viewY">
                       <property name="text">
                        <string>Y</string>
                       </property>
                      </widget>
                     </item>
                     <item row="6" column="7">
-                     <widget class="QPushButton" name="pushButton_17">
+                     <widget class="QPushButton" name="viewZoomOut">
                       <property name="text">
                        <string>-</string>
                       </property>
@@ -2190,7 +2190,7 @@ Program</string>
           <item>
            <widget class="QStackedWidget" name="droStack">
             <property name="currentIndex">
-             <number>2</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="dro_page_1">
              <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -2322,6 +2322,16 @@ Program</string>
                    </property>
                   </widget>
                  </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_36">
+                   <property name="text">
+                    <string>Absolute</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
               </item>
@@ -2332,6 +2342,21 @@ Program</string>
               <item>
                <widget class="QWidget" name="gridWidget" native="true">
                 <layout class="QGridLayout" name="gridLayout_13">
+                 <property name="leftMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="spacing">
+                  <number>5</number>
+                 </property>
                  <item row="0" column="1">
                   <widget class="QLabel" name="label_12">
                    <property name="text">
@@ -2367,12 +2392,18 @@ Program</string>
                    <property name="text">
                     <string>Position</string>
                    </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="0">
                   <widget class="QLabel" name="label_9">
                    <property name="text">
                     <string>Velocity</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -2381,12 +2412,18 @@ Program</string>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
                    </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                   </property>
                   </widget>
                  </item>
                  <item row="1" column="2">
                   <widget class="StatusLabel" name="statuslabel_12">
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                    </property>
                   </widget>
                  </item>
@@ -2395,12 +2432,18 @@ Program</string>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
                    </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="1">
                   <widget class="StatusLabel" name="statuslabel_14">
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.0.velocity&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'{}'.format(ch[0]*60)&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                    </property>
                   </widget>
                  </item>
@@ -2409,10 +2452,26 @@ Program</string>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
                    </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.1.velocity&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'{}'.format(ch[0]*60)&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="3">
                   <widget class="StatusLabel" name="statuslabel_16">
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.2.velocity&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'{}'.format(ch[0]*60)&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_37">
+                   <property name="text">
+                    <string>Reletive</string>
+                   </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
                    </property>
@@ -2428,10 +2487,28 @@ Program</string>
               <item>
                <widget class="QWidget" name="gridWidget_2" native="true">
                 <layout class="QGridLayout" name="gridLayout_14">
+                 <property name="leftMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="spacing">
+                  <number>5</number>
+                 </property>
                  <item row="1" column="2">
                   <widget class="StatusLabel" name="statuslabel_19">
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0][1])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                    </property>
                   </widget>
                  </item>
@@ -2450,12 +2527,18 @@ Program</string>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
                    </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g92_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0][0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="2">
                   <widget class="StatusLabel" name="statuslabel_20">
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g92_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0][1])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                    </property>
                   </widget>
                  </item>
@@ -2494,12 +2577,18 @@ Program</string>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
                    </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0][2])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="1">
                   <widget class="StatusLabel" name="statuslabel_18">
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g92_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0][0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                    </property>
                   </widget>
                  </item>
@@ -2520,20 +2609,6 @@ Program</string>
                    </property>
                    <property name="rules" stdset="0">
                     <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="0" colspan="2">
-                  <widget class="StatusLabel" name="statuslabel_24">
-                   <property name="rules" stdset="0">
-                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:file&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'File: ' + ch[0].split('/')[-1] if ch[0] else 'No File Loaded'&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="2">
-                  <widget class="StatusLabel" name="statuslabel_25">
-                   <property name="rules" stdset="0">
-                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:tool_in_spindle&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Tool {}'.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                    </property>
                   </widget>
                  </item>
@@ -2617,6 +2692,41 @@ Program</string>
            </widget>
           </item>
           <item>
+           <widget class="QWidget" name="gridWidget" native="true">
+            <layout class="QGridLayout" name="gridLayout_26">
+             <property name="leftMargin">
+              <number>5</number>
+             </property>
+             <property name="topMargin">
+              <number>5</number>
+             </property>
+             <property name="rightMargin">
+              <number>5</number>
+             </property>
+             <property name="bottomMargin">
+              <number>5</number>
+             </property>
+             <property name="spacing">
+              <number>5</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="StatusLabel" name="statuslabel_24">
+               <property name="rules" stdset="0">
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:file&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'File: ' + ch[0].split('/')[-1] if ch[0] else 'No File Loaded'&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="StatusLabel" name="statuslabel_25">
+               <property name="rules" stdset="0">
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:tool_in_spindle&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Tool {}'.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
            <widget class="QStackedWidget" name="controlStack">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -2647,7 +2757,81 @@ Program</string>
                  <property name="spacing">
                   <number>5</number>
                  </property>
-                 <item row="3" column="2">
+                 <item row="5" column="1" colspan="3">
+                  <widget class="ActionSlider" name="actionslider_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.feed-override.set</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="4">
+                  <widget class="ActionButton" name="actionbutton_17">
+                   <property name="text">
+                    <string>Spindle
+Off</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>spindle.off</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="ActionButton" name="actionbutton_19">
+                   <property name="text">
+                    <string>Spindle
+Faster</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>spindle.faster</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="ActionButton" name="actionbutton_15">
+                   <property name="text">
+                    <string>Spindle
+CW</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>spindle.forward</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1" colspan="3">
+                  <widget class="ActionSlider" name="actionslider_3">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>spindle.override</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="1" colspan="3">
+                  <widget class="ActionSlider" name="actionslider">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.rapid-override.set</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="ActionButton" name="actionbutton_16">
+                   <property name="text">
+                    <string>Spindle
+CCW</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>spindle.reverse</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="4">
                   <widget class="StatusLabel" name="statuslabel_9">
                    <property name="minimumSize">
                     <size>
@@ -2663,20 +2847,7 @@ Program</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="1">
-                  <spacer name="verticalSpacer">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item row="7" column="2">
+                 <item row="7" column="4">
                   <widget class="StatusLabel" name="statuslabel_8">
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -2686,13 +2857,13 @@ Program</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="5" column="2">
+                 <item row="5" column="4">
                   <widget class="StatusLabel" name="statuslabel_7">
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
                    </property>
                    <property name="rules" stdset="0">
-                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'{:g}'.format(ch[0]*100)&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'{:g}%'.format(ch[0]*100)&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                    </property>
                   </widget>
                  </item>
@@ -2729,7 +2900,7 @@ Overide</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="8" column="0" colspan="3">
+                 <item row="8" column="0" colspan="5">
                   <widget class="QGroupBox" name="gridGroupBox">
                    <property name="title">
                     <string>Jog Controls</string>
@@ -2824,44 +2995,24 @@ Overide</string>
                    </layout>
                   </widget>
                  </item>
-                 <item row="0" column="0" colspan="3">
-                  <widget class="QLabel" name="label_7">
+                 <item row="1" column="3">
+                  <widget class="ActionButton" name="actionbutton_18">
                    <property name="text">
-                    <string>Jog Buttons and
- Spindle Control Stuff</string>
+                    <string>Spindle
+Slower</string>
                    </property>
+                   <property name="actionName" stdset="0">
+                    <string>spindle.slower</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3" colspan="2">
+                  <widget class="StatusLabel" name="statuslabel_26">
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
                    </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="1">
-                  <widget class="ActionSlider" name="actionslider">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="actionName" stdset="0">
-                    <string>machine.rapid-override.set</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="1">
-                  <widget class="ActionSlider" name="actionslider_2">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="actionName" stdset="0">
-                    <string>machine.feed-override.set</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="1">
-                  <widget class="ActionSlider" name="actionslider_3">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="actionName" stdset="0">
-                    <string>spindle.override</string>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:spindle.0.speed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Spindle {}'.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                    </property>
                   </widget>
                  </item>
@@ -3765,6 +3916,134 @@ Ops</string>
     <hint type="destinationlabel">
      <x>436</x>
      <y>281</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>viewP</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>setViewP()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>801</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>viewX</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>setViewX()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>801</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>viewY</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>setViewY()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>801</x>
+     <y>209</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>viewZ</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>setViewZ()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>801</x>
+     <y>273</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>viewZ2</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>setViewZ2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>801</x>
+     <y>337</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>viewZoomIn</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>zoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>801</x>
+     <y>401</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>viewZoomOut</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>zoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>801</x>
+     <y>465</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>viewClear</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>clearLivePlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>801</x>
+     <y>529</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>307</y>
     </hint>
    </hints>
   </connection>
