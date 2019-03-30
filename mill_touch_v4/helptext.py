@@ -2,8 +2,8 @@ def gcode_titles():
 
     titles = {'G0':'Coordinated Motion at Rapid Rate',
         'G1':'Coordinated Motion at Feed Rate',
-        'G2':'Coordinated Clockwise Helical Motion at Feed Rate',
-        'G3':'Coordinated Counterclockwise Helical Motion at Feed Rate',
+        'G2':'Coordinated CW Helical Motion at Feed Rate',
+        'G3':'Coordinated CCW Helical Motion at Feed Rate',
         'G4':'Dwell',
         'G5':'Cubic Spline',
         'G5.1':'Quadratic B-Spline',
@@ -11,6 +11,7 @@ def gcode_titles():
         'G5.3':'NURBS, close control point',
         'G7':'Diameter Mode (lathe)',
         'G8':'Radius Mode (lathe)',
+        'G10':'Offsets L1, L2, L10, L11, L20',
         'G10L1':'Set Tool Table Entry',
         'G10L2':'Set Tool Table, Calculated, Workpiece',
         'G10L10':'Set Tool Table, Calculated, Fixture',
@@ -36,9 +37,9 @@ def gcode_titles():
         'G38.5':'Probing Away Workpiece',
         'G40':'Cancel Cutter Compensation',
         'G41':'Cutter Compensation, Left of Programmed Path',
-        'G41.1':'Dynamic Cutter Compensation, Left of Programmed Path',
+        'G41.1':'Dynamic Cutter Compensation, Left of Path',
         'G42':'Cutter Compensation, Right of Programmed Path',
-        'G42.1':'Dynamic Cutter Compensation, Right of Programmed Path',
+        'G42.1':'Dynamic Cutter Compensation, Right of Path',
         'G43':'Use Tool Length Offset from Tool Table',
         'G43.1':'Dynamic Tool Length Offset',
         'G43.2':'Apply additional Tool Length Offset',
@@ -265,11 +266,12 @@ def gcode_descriptions(gcode):
         'G98':G98,
         'G99':G99,}
 
-    print(gcode)
     if gcode in gcodeTitle:
         return gcodeTitle[gcode]
     else:
         return ''
+
+# Maximum Width is 58
 
 G0 = """G0 axes
 Coordinated motion at maximum speed
@@ -279,7 +281,7 @@ G1 = """G1 axes
 Coordinated motion at feed speed
 """
 
-G2 = """G2 Coordinated Clockwise Helical Motion at Feed Rate
+G2 = """G2 Coordinated CW Helical Motion at Feed Rate
 Center Format G2 axes offsets <P>
 XY plane (G17)\nZ = helix\nI = X offset\nJ = Y offset\n
 XZ plane (G18)\nY = helix\nI = X offset\nK = Z offset\n
@@ -289,7 +291,7 @@ Radius Format G2 axes R <P>
 R = Radius from Current Position
 """
 
-G3 = """G3 Coordinated Counterclockwise Helical Motion at Feed Rate
+G3 = """G3 Coordinated CCW Helical Motion at Feed Rate
 Center Format G3 axes offsets <P>
 XY plane (G17)\nZ = helix\nI = X offset\nJ = Y offset\n
 XZ plane (G18)\nY = helix\nI = X offset\nK = Z offset\n
@@ -305,13 +307,17 @@ Dwell program for P seconds, floating point.
 
 G5 = """G5 Cubic Spline
 G5 X Y <I J> P Q
-I = X incremental offset from start point to first control point
-J = Y incremental offset from start point to first control point
-P = X incremental offset from end point to second control point
-Q = Y incremental offset from end point to second control point
+I = X incremental offset from start point to first
+    control point
+J = Y incremental offset from start point to first
+    control point
+P = X incremental offset from end point to second
+    control point
+Q = Y incremental offset from end point to second
+    control point
 
-G5 creates a cubic B-spline in the XY plane with the X and
-Y axes only.
+G5 creates a cubic B-spline in the XY plane with the X
+and Y axes only.
 P and Q must both be specified for every G5 command.
 """
 
@@ -363,11 +369,11 @@ R = radius of tool
 I = front angle (lathe)
 J = back angle (lathe)
 Q = orientation (lathe)
-G10 L10 changes the tool table entry for tool P so that if
-the tool offset is reloaded, with the machine in its current
-position and with the current G5x and G52/G92 offsets active,
-the current coordinates for the given axes will become the
-given values.
+G10 L10 changes the tool table entry for tool P so that
+if the tool offset is reloaded, with the machine in its
+current position and with the current G5x and G52/G92
+offsets active, the current coordinates for the given
+axes will become the given values.
 """
 
 G10L11 = """G10 L11 Set Tool Table
@@ -377,19 +383,21 @@ R = radius of tool
 I = front angle (lathe)
 J = back angle (lathe)
 Q = orientation (lathe)
-G10 L11 is just like G10 L10 except that instead of setting
-the entry according to the current offsets, it is set so that
-the current coordinates would become the given value if the
-new tool offset is reloaded and the machine is placed in
-the G59.3 coordinate system without any G52/G92 offset active.
+G10 L11 is just like G10 L10 except that instead of
+setting the entry according to the current offsets, it is
+set so that the current coordinates would become the
+given value if the new tool offset is reloaded and the
+machine is placed in the G59.3 coordinate system without
+any G52/G92 offset active.
 """
 
 G10L20 = """G10 L20 Set Coordinate System
 G10 L20 P- axes
 P - coordinate system (0-9)
-G10 L20 is similar to G10 L2 except that instead of setting
-the offset/entry to the given value, it is set to a calculated
-value that makes the current coordinates become the given value.
+G10 L20 is similar to G10 L2 except that instead of
+setting the offset/entry to the given value, it is set to
+a calculated value that makes the current coordinates
+become the given value.
 """
 
 G17 = """G17 Plane Select
@@ -428,18 +436,19 @@ G21 = """G21 Millimeter Units
 G28 = """G28 Go to Predefined Position
 G28 uses the values stored in parameters 5161-5169 as the
 X Y Z A B C U V W final point to move to. The parameter
-values are absolute machine coordinates in the native machine
-units as specified in the ini file. All axes defined in the ini
-file will be moved when a G28 is issued. If no positions are
-stored with G28.1 then all axes will go to the machine origin.
+values are absolute machine coordinates in the native
+machine units as specified in the ini file. All axes
+defined in the ini file will be moved when a G28 is issued.
+If no positions are stored with G28.1 then all axes will go
+to the machine origin.
 
 G28 - makes a rapid move from the current position to the
 absolute position of the values in parameters 5161-5166.
 
-G28 axes - makes a rapid move to the position specified by axes
-including any offsets, then will make a rapid move to the
-absolute position of the values in parameters 5161-5166 for all
-axes specified. Any axis not specified will not move.
+G28 axes - makes a rapid move to the position specified by
+axes including any offsets, then will make a rapid move to
+the absolute position of the values in parameters 5161-5166
+for all axes specified. Any axis not specified will not move.
 """
 
 G28_1 = """G28.1 Set Predefined Position
@@ -461,10 +470,11 @@ of the ini file.
 G30 - makes a rapid move from the current position to the
 absolute position of the values in parameters 5181-5189.
 
-G30 axes - makes a rapid move to the position specified by axes
-including any offsets, then will make a rapid move to the
-absolute position of the values in parameters 5181-5189 for all
-axes specified. Any axis not specified will not move.
+G30 axes - makes a rapid move to the position specified by
+axes including any offsets, then will make a rapid move to
+the absolute position of the values in parameters 5181-5189
+for all axes specified. Any axis not specified will not
+move.
 """
 
 G30_1 = """G30.1 Set Predefined Position
@@ -474,30 +484,42 @@ G30.1 - stores the current absolute position into parameters
 
 G33 = """G33 Spindle Synchronized Motion
 G33 X Y Z K $
-K - Distance per revolution
+K = Distance per revolution
 $ = Spindle to use, optional
 
 For spindle-synchronized motion in one direction, code
-G33 X- Y- Z- K- where K gives the distance moved in XYZ for each
-revolution of the spindle.
+G33 X- Y- Z- K- where K gives the distance moved in XYZ for
+each revolution of the spindle.
 """
 
 G33_1 = """Rigid Tapping
 G33.1 X Y Z K I $
+K = distance per revolution
+I = optional spindle speed multiplier for faster return move
+$ = optional spindle selector
+
+G33.1 moves from the current coordinate to the specified
+coordinate, synchronized with the selected spindle at the
+given ratio and starting from the current coordinate with
+a spindle index pulse.
+
+Note: To tap a straight hole a pre-position move to the
+desired X Y coordinates before issuing a G33.1.
 """
 
 G38_2 = """G38.2 Straight Probe
 G38.2 axes
 
-G38.2 - probe toward workpiece, stop on contact, signal error
-if failure
+G38.2 - probe toward workpiece, stop on contact, signal
+error if failure
 
-Program G38.2 axes to perform a straight probe operation. The
-axis words are optional, except that at least one of them must
-be used. The axis words together define the destination point
-that the probe will move towards, starting from the current
-location. If the probe is not tripped before the destination
-is reached G38.2 will signal an error.
+Program G38.2 axes to perform a straight probe operation.
+The axis words are optional, except that at least one of
+them must be used. The axis words together define the
+destination point that the probe will move towards,
+starting from the current location. If the probe is not
+tripped before the destination is reached G38.2 will
+signal an error.
 """
 
 G38_3 = """G38.3 Straight Probe

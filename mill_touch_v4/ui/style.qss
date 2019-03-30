@@ -37,14 +37,7 @@ QListWidget:alternate {
     background: #DBDBDB;
 }
 
-/*
 
-:alternate 
-
-ActionButton:disabled {
-    border-color: #404040;
-}
-*/
 QsciScintilla {
     qproperty-backgroundcolor: #D9DADB;
     qproperty-marginbackgroundcolor: #D9DADB;

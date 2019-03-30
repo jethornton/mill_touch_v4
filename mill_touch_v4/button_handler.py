@@ -1,3 +1,13 @@
+# Setup Help Text
+import mill_touch_v4.helptext as helptext
+
+def loadGcodeList(parent):
+    titles = helptext.gcode_titles()
+    #for index, value in enumerate(titles):
+    #    parent.gcodeHelpListWidget.addItem(value)
+
+    for key in sorted(titles.iterkeys()):
+        parent.gcodeHelpListWidget.addItem(key + titles[key])
 
 def holeOpsHandleKeys(parent, button):
     #print(button.text())
@@ -15,47 +25,49 @@ def holeOpsHandleKeys(parent, button):
         text = char
     drillLabel.setText(text)
 
-def mdiHandleKeys(self, button):
+def mdiHandleKeys(parent, button):
     char = str(button.text())
-    text = self.mdiEntry.text() or 'null'
+    text = parent.mdiEntry.text() or 'null'
     if text != 'null':
         text += char
     else:
         text = char
-    self.mdiEntry.setText(text)
+    parent.mdiEntry.setText(text)
 
-def mdiSetLabels(self):
+def mdiSetLabels(parent):
     # get smart and figure out what axes are used
 
-    text = self.mdiEntry.text() or '0'
-    if text != '0':
+    text = parent.mdiEntry.text() or 'null'
+    print(text)
+    if text != 'null':
         words = helptext.gcode_words()
         if text in words:
-            self.mdiClear()
+            mdiClear(parent)
             for index, value in enumerate(words[text], start=1):
-                getattr(self, 'gcodeParameter_' + str(index)).setText(value)
+                print(value)
+                getattr(parent, 'gcodeParameter_' + str(index)).setText(value)
         else:
-            self.mdiClear()
+            mdiClear(parent)
         titles = helptext.gcode_titles()
         if text in titles:
-            self.gcodeDescription.setText(titles[text])
+            parent.gcodeDescription.setText(titles[text])
         else:
-            self.mdiClear()
-        self.gcodeHelpLabel.setText(helptext.gcode_descriptions(text))
+            mdiClear(parent)
+        parent.gcodeHelpLabel.setText(helptext.gcode_descriptions(text))
     else:
-        self.mdiClear()
+        mdiClear(parent)
+        print('No Match')
 
-def mdiClear(self):
+def mdiClear(parent):
     for index in range(1,8):
-        getattr(self, 'gcodeParameter_' + str(index)).setText('')
-    self.gcodeDescription.setText('')
-    self.gcodeHelpLabel.setText('')
+        getattr(parent, 'gcodeParameter_' + str(index)).setText('')
+    parent.gcodeDescription.setText('')
+    parent.gcodeHelpLabel.setText('')
 
-def mdiHandleBackSpace(self):
-    if len(self.mdiEntry.text()) > 0:
-        text = self.mdiEntry.text()[:-1]
-        self.mdiEntry.setText(text)
-
+def mdiHandleBackSpace(parent):
+    if len(parent.mdiEntry.text()) > 0:
+        text = parent.mdiEntry.text()[:-1]
+        parent.mdiEntry.setText(text)
 
 def drillOpBackspace(parent):
     entryPoint = parent.holeOpBtnGrp.checkedButton().property('labelName')
@@ -101,6 +113,28 @@ def coordListMoveUp(parent):
     else:
         parent.coordListWidget.setCurrentRow(rows)
 
+def gcodeListMoveDown(parent):
+    rows = parent.gcodeHelpListWidget.count()-1
+    currentRow = parent.gcodeHelpListWidget.currentRow()
+    if currentRow < rows:
+        if (currentRow + 25) < rows:
+            parent.gcodeHelpListWidget.setCurrentRow(currentRow + 25)
+        else:
+            parent.gcodeHelpListWidget.setCurrentRow(rows)
+    else:
+        parent.gcodeHelpListWidget.setCurrentRow(0)
+
+
+def gcodeListMoveUp(parent):
+    rows = parent.gcodeHelpListWidget.count()-1
+    currentRow = parent.gcodeHelpListWidget.currentRow()
+    if currentRow > 0:
+        if currentRow > 25:
+            parent.gcodeHelpListWidget.setCurrentRow(currentRow - 25)
+        else:
+            parent.gcodeHelpListWidget.setCurrentRow(0)
+    else:
+        parent.gcodeHelpListWidget.setCurrentRow(rows)
 
 def coordListClear(parent):
     parent.coordListWidget.clear()
@@ -112,16 +146,33 @@ def coordListRemoveLine(parent):
     #count()
     parent.coordListWidget.takeItem(parent.coordListWidget.currentRow())
 
-
-
-def g5xHandleKeys(self, button):
+def g5xHandleKeys(parent, button):
     char = str(button.text())
-    text = self.g5xOffsetLbl.text() or 'null'
+    text = parent.g5xOffsetLbl.text() or 'null'
     if text != 'null':
         text += char
     else:
         text = char
-    self.g5xOffsetLbl.setText(text)
+    parent.g5xOffsetLbl.setText(text)
+
+def g5xHandleBackSpace(parent):
+    if len(parent.g5xOffsetLbl.text()) > 0:
+        text = parent.g5xOffsetLbl.text()[:-1]
+        parent.g5xOffsetLbl.setText(text)
+
+def g92HandleKeys(parent, button):
+    char = str(button.text())
+    text = parent.g92OffsetsLbl.text() or 'null'
+    if text != 'null':
+        text += char
+    else:
+        text = char
+    parent.g92OffsetsLbl.setText(text)
+
+def g92HandleBackSpace(parent):
+    if len(parent.g92OffsetsLbl.text()) > 0:
+        text = parent.g92OffsetsLbl.text()[:-1]
+        parent.g92OffsetsLbl.setText(text)
 
 
 

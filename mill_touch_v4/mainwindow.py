@@ -7,9 +7,6 @@ LOG = logger.getLogger('qtpyvcp.' + __name__)
 # Hide Window Title Bar
 from PyQt5 import QtCore
 
-# Setup Help Text
-import mill_touch_v4.helptext as helptext
-
 # Setup Button Handler
 import mill_touch_v4.button_handler as btnHandler
 
@@ -17,6 +14,8 @@ import mill_touch_v4.button_handler as btnHandler
 import mill_touch_v4.gcode_gen as gcodeGen
 
 import linuxcnc
+
+import mill_touch_v4.resources.resources_rc
 
 class MyMainWindow(VCPMainWindow):
     """Main window class for the VCP."""
@@ -29,6 +28,8 @@ class MyMainWindow(VCPMainWindow):
             QtCore.Qt.CustomizeWindowHint)
             # | QtCore.Qt.WindowStaysOnTopHint
 
+        btnHandler.loadGcodeList(self)
+
         self.holeKeyPad.buttonClicked.connect(self.holeOpsHandleKeys)
         self.drillBackspace.clicked.connect(self.drillHandleBackspace)
         self.coordListAddBtn.clicked.connect(self.coordListAppend)
@@ -37,6 +38,8 @@ class MyMainWindow(VCPMainWindow):
         self.coordListMoveDownBtn.clicked.connect(self.coordHandleMoveDown)
         self.coordListClearBtn.clicked.connect(self.coordHandleClear)
         self.coordListRemoveBtn.clicked.connect(self.coordHandleRemoveLine)
+        self.gcodeListPageUpBtn.clicked.connect(self.gcodeHandleMoveUp)
+        self.gcodeListPageDownBtn.clicked.connect(self.gcodeHandleMoveDown)
         self.preambleAddBtn.clicked.connect(self.preambleAdd)
         self.gcodeAppendBtn.clicked.connect(self.gcodeAppend)
         self.postambleAppendBtn.clicked.connect(self.postambleAppend)
@@ -47,13 +50,14 @@ class MyMainWindow(VCPMainWindow):
         self.mainBtnGrp.buttonClicked.connect(self.mainChangePage)
         self.mdiBackspace.clicked.connect(self.mdiHandleBackSpace)
         self.mdiBtnGrp.buttonClicked.connect(self.mdiHandleKeys)
-        self.mdiHelpBtn.clicked.connect(self.mdiHelpPage)
-        self.mdiEntryBtn.clicked.connect(self.mdiEntryPage)
+        self.mdiNavGroup.buttonClicked.connect(self.mdiChangePage)
         self.mdiLoad.clicked.connect(self.mdiSetLabels)
         self.smartGcodeBtnGrp.buttonClicked.connect(self.smartChangePage)
         self.reloadProgramBtn.clicked.connect(self.reloadProgram)
         self.g5xKeypad.buttonClicked.connect(self.g5xHandleKeys)
-
+        self.g5xBkspBtn.clicked.connect(self.g5xHandleBackSpace)
+        self.g92Keypad.buttonClicked.connect(self.g92HandleKeys)
+        self.g92BkspBtn.clicked.connect(self.g92HandleBackSpace)
 
     def reloadProgram(self):
         gcodeGen.reloadProgram(self)
@@ -82,6 +86,12 @@ class MyMainWindow(VCPMainWindow):
     def coordHandleRemoveLine(self):
         btnHandler.coordListRemoveLine(self)
 
+    def gcodeHandleMoveUp(self):
+        btnHandler.gcodeListMoveUp(self)
+
+    def gcodeHandleMoveDown(self):
+        btnHandler.gcodeListMoveDown(self)
+
     def preambleAdd(self):
         gcodeGen.preambleAdd(self)
 
@@ -100,18 +110,26 @@ class MyMainWindow(VCPMainWindow):
     def g5xHandleKeys(self, button):
         btnHandler.g5xHandleKeys(self, button)
 
+    def g5xHandleBackSpace(self):
+        btnHandler.g5xHandleBackSpace(self)
+
+    def g92HandleKeys(self, button):
+        btnHandler.g92HandleKeys(self, button)
+
+    def g92HandleBackSpace(self):
+        btnHandler.g92HandleBackSpace(self)
+
     def mdiHandleKeys(self, button):
         btnHandler.mdiHandleKeys(self, button)
 
-    def mdiHandleBackSpace(self, button):
-        btnHandler.mdiHandleBackSpace(self, button)
+    def mdiHandleBackSpace(self):
+        btnHandler.mdiHandleBackSpace(self)
 
-    def mdiSetLabels(self, button):
-        btnHandler.mdiSetLabels(self, button)
+    def mdiSetLabels(self):
+        btnHandler.mdiSetLabels(self)
 
-    def mdiHandleKeys(self, button):
-        btnHandler.mdiHandleKeys(self, button)
-
+    def mdiChangePage(self, button):
+        self.mdiStack.setCurrentIndex(button.property('page'))
 
     def mainChangePage(self, button):
         self.mainStack.setCurrentIndex(button.property('page'))
@@ -132,14 +150,6 @@ class MyMainWindow(VCPMainWindow):
         self.smartStack.setCurrentIndex(button.property('page'))
         if button.property('buttonName'):
             getattr(self, button.property('buttonName')).setChecked(True)
-
-    def mdiHelpPage(self, button):
-        self.mdiStack.setCurrentIndex(1)
-
-    def mdiEntryPage(self, button):
-        self.mdiStack.setCurrentIndex(0)
-
-
 
     def on_exitBtn_clicked(self):
         self.app.quit()
