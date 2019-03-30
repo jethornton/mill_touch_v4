@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="images">
+    <file>drill_stuff_small.png</file>
+    <file>drill_stuff.png</file>
+  </qresource>
+</RCC>

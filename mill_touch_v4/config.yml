@@ -7,7 +7,7 @@ qtdesigner:
 
 vcp:
   name: mill_touch_v4
-  version: v0.0.1
+  version: v0.1.0
   author: My Name
   description: >
     Put a short description of your VCP here. This will be

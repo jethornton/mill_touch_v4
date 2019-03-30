@@ -52,16 +52,11 @@ class MyMainWindow(VCPMainWindow):
         self.mdiLoad.clicked.connect(self.mdiSetLabels)
         self.smartGcodeBtnGrp.buttonClicked.connect(self.smartChangePage)
         self.reloadProgramBtn.clicked.connect(self.reloadProgram)
+        self.g5xKeypad.buttonClicked.connect(self.g5xHandleKeys)
+
 
     def reloadProgram(self):
-        emcStat = linuxcnc.stat()
-        emcStat.poll()
-        gcodeFile = emcStat.file
-        print(gcodeFile)
-        emcCommand = linuxcnc.command()
-        emcCommand.reset_interpreter()
-        emcCommand.wait_complete()
-        emcCommand.program_open(gcodeFile)
+        gcodeGen.reloadProgram(self)
 
     def holeOpsHandleKeys(self, button):
         btnHandler.holeOpsHandleKeys(self, button)
@@ -102,6 +97,20 @@ class MyMainWindow(VCPMainWindow):
     def clearGcode(self):
         gcodeGen.clearGcode(self)
 
+    def g5xHandleKeys(self, button):
+        btnHandler.g5xHandleKeys(self, button)
+
+    def mdiHandleKeys(self, button):
+        btnHandler.mdiHandleKeys(self, button)
+
+    def mdiHandleBackSpace(self, button):
+        btnHandler.mdiHandleBackSpace(self, button)
+
+    def mdiSetLabels(self, button):
+        btnHandler.mdiSetLabels(self, button)
+
+    def mdiHandleKeys(self, button):
+        btnHandler.mdiHandleKeys(self, button)
 
 
     def mainChangePage(self, button):
@@ -130,46 +139,7 @@ class MyMainWindow(VCPMainWindow):
     def mdiEntryPage(self, button):
         self.mdiStack.setCurrentIndex(0)
 
-    def mdiHandleKeys(self, button):
-        char = str(button.text())
-        text = self.mdiEntry.text() or '0'
-        if text != '0':
-            text += char
-        else:
-            text = char
-        self.mdiEntry.setText(text)
 
-    def mdiSetLabels(self):
-        # get smart and figure out what axes are used
-
-        text = self.mdiEntry.text() or '0'
-        if text != '0':
-            words = helptext.gcode_words()
-            if text in words:
-                self.mdiClear()
-                for index, value in enumerate(words[text], start=1):
-                    getattr(self, 'gcodeParameter_' + str(index)).setText(value)
-            else:
-                self.mdiClear()
-            titles = helptext.gcode_titles()
-            if text in titles:
-                self.gcodeDescription.setText(titles[text])
-            else:
-                self.mdiClear()
-            self.gcodeHelpLabel.setText(helptext.gcode_descriptions(text))
-        else:
-            self.mdiClear()
-
-    def mdiClear(self):
-        for index in range(1,8):
-            getattr(self, 'gcodeParameter_' + str(index)).setText('')
-        self.gcodeDescription.setText('')
-        self.gcodeHelpLabel.setText('')
-
-    def mdiHandleBackSpace(self):
-        if len(self.mdiEntry.text()) > 0:
-            text = self.mdiEntry.text()[:-1]
-            self.mdiEntry.setText(text)
 
     def on_exitBtn_clicked(self):
         self.app.quit()
