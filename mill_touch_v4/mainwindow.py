@@ -44,6 +44,7 @@ class MyMainWindow(VCPMainWindow):
         self.holeOpAppendBtn.clicked.connect(self.holeOpAppend)
         self.mdiAppendBtn.clicked.connect(self.mdiAppend)
         self.gcodeLoadBtn.clicked.connect(self.gcodeLoad)
+        self.gcodeSaveBtn.clicked.connect(self.gcodeSave)
         self.clearGcodeBtn.clicked.connect(self.clearGcode)
         self.controlBtnGrp.buttonClicked.connect(self.controlChangePage)
         self.droBtnGrp.buttonClicked.connect(self.droChangePage)
@@ -103,6 +104,9 @@ class MyMainWindow(VCPMainWindow):
 
     def gcodeLoad(self):
         gcodeGen.gcodeLoad(self)
+
+    def gcodeSave(self):
+        gcodeGen.gcodeSave(self)
 
     def clearGcode(self):
         gcodeGen.clearGcode(self)

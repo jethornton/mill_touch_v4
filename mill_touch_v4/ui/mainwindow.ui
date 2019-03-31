@@ -57,7 +57,7 @@
           <item>
            <widget class="QStackedWidget" name="mainStack">
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="mainPage_1">
              <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -589,7 +589,7 @@ Milling</string>
               <item row="0" column="0">
                <widget class="QStackedWidget" name="smartStack">
                 <property name="currentIndex">
-                 <number>4</number>
+                 <number>7</number>
                 </property>
                 <widget class="QWidget" name="page_5">
                  <layout class="QGridLayout" name="gridLayout_21">
@@ -2215,7 +2215,15 @@ G code</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="0" column="0" rowspan="9">
+                     <item row="9" column="1">
+                      <widget class="QPushButton" name="gcodeSaveBtn">
+                       <property name="text">
+                        <string>Save
+File</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0" rowspan="10">
                       <widget class="QListWidget" name="gcodeListWidget"/>
                      </item>
                     </layout>
@@ -2380,6 +2388,82 @@ G code</string>
                  </property>
                  <item row="0" column="0">
                   <widget class="ToolTable" name="tooltable"/>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QWidget" name="gridWidget" native="true">
+                   <layout class="QGridLayout" name="gridLayout_44">
+                    <property name="leftMargin">
+                     <number>5</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>5</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>5</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>5</number>
+                    </property>
+                    <property name="spacing">
+                     <number>5</number>
+                    </property>
+                    <item row="0" column="6">
+                     <widget class="QPushButton" name="pushButton_79">
+                      <property name="text">
+                       <string>Nav
+Down</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="3">
+                     <widget class="QPushButton" name="toolTblSaveBtn">
+                      <property name="text">
+                       <string>Save
+Tool Table</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="4">
+                     <widget class="QPushButton" name="toolTblReloadBtn">
+                      <property name="text">
+                       <string>Reload
+Tool Table</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="toolTblClearBtn">
+                      <property name="text">
+                       <string>Clear
+Tool Table</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QPushButton" name="toolTblAddBtn">
+                      <property name="text">
+                       <string>Add Line</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QPushButton" name="toolTblDeleteLineBtn">
+                      <property name="text">
+                       <string>Delete
+Selected</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="5">
+                     <widget class="QPushButton" name="pushButton_114">
+                      <property name="text">
+                       <string>Nav
+Up</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
                  </item>
                 </layout>
                </widget>
@@ -5251,6 +5335,86 @@ Ops</string>
     <hint type="destinationlabel">
      <x>403</x>
      <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolTblReloadBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>loadToolTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>733</x>
+     <y>548</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolTblSaveBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>saveToolTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>535</x>
+     <y>548</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>275</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolTblAddBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>addTool()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>337</x>
+     <y>548</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>275</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolTblDeleteLineBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>deleteSelectedTool()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>139</x>
+     <y>548</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>275</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolTblClearBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>clearToolTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>548</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>275</y>
     </hint>
    </hints>
   </connection>

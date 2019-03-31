@@ -120,6 +120,9 @@ def gcodeLoad(parent):
     emcCommand.reset_interpreter()
     emcCommand.program_open('/tmp/qtpyvcp.ngc')
 
+def gcodeSave(parent):
+    pass
+
 def clearGcode(parent):
     parent.gcodeListWidget.clear()
 
