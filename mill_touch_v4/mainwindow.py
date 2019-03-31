@@ -41,8 +41,8 @@ class MyMainWindow(VCPMainWindow):
         self.gcodeListPageUpBtn.clicked.connect(self.gcodeHandleMoveUp)
         self.gcodeListPageDownBtn.clicked.connect(self.gcodeHandleMoveDown)
         self.preambleAddBtn.clicked.connect(self.preambleAdd)
-        self.gcodeAppendBtn.clicked.connect(self.gcodeAppend)
-        self.postambleAppendBtn.clicked.connect(self.postambleAppend)
+        self.holeOpAppendBtn.clicked.connect(self.holeOpAppend)
+        self.mdiAppendBtn.clicked.connect(self.mdiAppend)
         self.gcodeLoadBtn.clicked.connect(self.gcodeLoad)
         self.clearGcodeBtn.clicked.connect(self.clearGcode)
         self.controlBtnGrp.buttonClicked.connect(self.controlChangePage)
@@ -95,11 +95,11 @@ class MyMainWindow(VCPMainWindow):
     def preambleAdd(self):
         gcodeGen.preambleAdd(self)
 
-    def gcodeAppend(self):
-        gcodeGen.gcodeAppend(self)
+    def holeOpAppend(self):
+        gcodeGen.holeOpAppend(self)
 
-    def postambleAppend(self):
-        gcodeGen.postambleAppend(self)
+    def mdiAppend(self):
+        gcodeGen.mdiAppend(self)
 
     def gcodeLoad(self):
         gcodeGen.gcodeLoad(self)
