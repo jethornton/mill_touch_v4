@@ -13,6 +13,10 @@ import mill_touch_v4.button_handler as btnHandler
 # Setup the G code Generator
 import mill_touch_v4.gcode_gen as gcodeGen
 
+# Setup the Threads Database
+import mill_touch_v4.threads as threadData
+
+
 import linuxcnc
 
 import mill_touch_v4.resources.resources_rc
@@ -59,6 +63,19 @@ class MyMainWindow(VCPMainWindow):
         self.g5xBkspBtn.clicked.connect(self.g5xHandleBackSpace)
         self.g92Keypad.buttonClicked.connect(self.g92HandleKeys)
         self.g92BkspBtn.clicked.connect(self.g92HandleBackSpace)
+
+        self.formNextBtn.clicked.connect(self.formNext)
+        self.formPreviousBtn.clicked.connect(self.formPrevious)
+        self.sizeNextBtn.clicked.connect(self.sizeNext)
+        self.sizePreviousBtn.clicked.connect(self.sizePrevious)
+        self.classNextBtn.clicked.connect(self.classNext)
+        self.classPreviousBtn.clicked.connect(self.classPrevious)
+
+        #self.appendSPTMBtn.clicked.connect(self.appendSPTM)
+
+        if not threadData.open_db(self):
+            print('Failed to Open Database')
+
 
     def reloadProgram(self):
         gcodeGen.reloadProgram(self)
@@ -143,6 +160,24 @@ class MyMainWindow(VCPMainWindow):
 
     def droChangePage(self, button):
         self.droStack.setCurrentIndex(button.property('page'))
+
+    def formNext(self):
+        threadData.formNext(self)
+
+    def formPrevious(self):
+        threadData.formPrevious(self)
+
+    def sizeNext(self):
+        threadData.sizeNext(self)
+
+    def sizePrevious(self):
+        threadData.sizePrevious(self)
+
+    def classNext(self):
+        threadData.classNext(self)
+
+    def classPrevious(self):
+        threadData.classPrevious(self)
 
     def smartChangePage(self, button):
         #self.pushButton_58.setChecked(True)
