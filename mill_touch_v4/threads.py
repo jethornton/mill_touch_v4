@@ -149,12 +149,15 @@ def sptmPrevious(parent):
         parent.sptmMapper.toLast()
     sptmCalculations(parent)
 
+
 def sptmCalculations(parent):
+    pass
+"""
     majorDia = float(parent.majorDiameterLbl.text())
     minorDia = float(parent.minMinorDiameterLbl.text())
     standardPDO = majorDia - minorDia
     parent.sptmStandardPDOLbl.setText(str(standardPDO))
-
+"""
 
 """
 sptmDiameterLbl
