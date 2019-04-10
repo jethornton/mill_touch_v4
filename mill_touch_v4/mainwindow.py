@@ -70,6 +70,8 @@ class MyMainWindow(VCPMainWindow):
         self.sizePreviousBtn.clicked.connect(self.sizePrevious)
         self.classNextBtn.clicked.connect(self.classNext)
         self.classPreviousBtn.clicked.connect(self.classPrevious)
+        self.sptmNextBtn.clicked.connect(self.sptmNext)
+        self.sptmPreviousBtn.clicked.connect(self.sptmPrevious)
 
         #self.appendSPTMBtn.clicked.connect(self.appendSPTM)
 
@@ -178,6 +180,12 @@ class MyMainWindow(VCPMainWindow):
 
     def classPrevious(self):
         threadData.classPrevious(self)
+
+    def sptmNext(self):
+        threadData.sptmNext(self)
+
+    def sptmPrevious(self):
+        threadData.sptmPrevious(self)
 
     def smartChangePage(self, button):
         #self.pushButton_58.setChecked(True)
